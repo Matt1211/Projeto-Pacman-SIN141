@@ -1,16 +1,6 @@
 ﻿################################################################################
 # Este arquivo .gitignore foi criado automaticamente pelo Microsoft(R) Visual Studio.
 ################################################################################
-
-/.vs/AllegroProj/FileContentIndex/7744f985-cdce-4c64-abda-19e345e2317c.vsidx
-/.vs/AllegroProj/v17/Browse.VC.db-shm
-/.vs/AllegroProj/v17/Browse.VC.opendb
-/.vs/AllegroProj/v17/Browse.VC.db-wal
-/.vs/AllegroProj/v17/.suo
-/.vs/AllegroProj/v17/Browse.VC.db
+/.vs/AllegroProj/v17/
 allegro.log
-/x64/Debug/AllegroProj.log
-/x64/Debug/AllegroProj.tlog/CL.read.1.tlog
-/x64/Debug/AllegroProj.tlog/CL.write.1.tlog
-/x64/Debug/AllegroProj.tlog/link.read.1.tlog
-/x64/Debug/AllegroProj.tlog/link.write.1.tlog
+x64/
