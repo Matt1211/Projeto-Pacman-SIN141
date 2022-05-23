@@ -2,5 +2,6 @@
   Principal.cpp
   EstruturasMapa.cpp
   Tijolo.cpp
-  Gerando Código...
-  AllegroProj.vcxproj -> D:\davir\Documents\ProjetoSIN141\Projeto-Pacman-SIN141\x64\Debug\AllegroProj.exe
+  Generating Code...
+  LINK : C:\Users\Matheus Moreira\Documents\Projeto Pacman\AllegroProj\x64\Debug\AllegroProj.exe not found or not built by the last incremental link; performing full link
+  AllegroProj.vcxproj -> C:\Users\Matheus Moreira\Documents\Projeto Pacman\AllegroProj\x64\Debug\AllegroProj.exe
