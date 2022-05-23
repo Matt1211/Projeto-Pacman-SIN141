@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AllegroProj", "AllegroProj.vcxproj", "{F6F9B62E-3E38-47CF-9A26-C1E34735C530}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6F9B62E-3E38-47CF-9A26-C1E34735C530}.Debug|x64.ActiveCfg = Debug|x64
+		{F6F9B62E-3E38-47CF-9A26-C1E34735C530}.Debug|x64.Build.0 = Debug|x64
+		{F6F9B62E-3E38-47CF-9A26-C1E34735C530}.Debug|x86.ActiveCfg = Debug|Win32
+		{F6F9B62E-3E38-47CF-9A26-C1E34735C530}.Debug|x86.Build.0 = Debug|Win32
+		{F6F9B62E-3E38-47CF-9A26-C1E34735C530}.Release|x64.ActiveCfg = Release|x64
+		{F6F9B62E-3E38-47CF-9A26-C1E34735C530}.Release|x64.Build.0 = Release|x64
+		{F6F9B62E-3E38-47CF-9A26-C1E34735C530}.Release|x86.ActiveCfg = Release|Win32
+		{F6F9B62E-3E38-47CF-9A26-C1E34735C530}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D4742E10-73C8-424B-BB41-B1E083F2764C}
+	EndGlobalSection
+EndGlobal
