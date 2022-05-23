@@ -1,2 +1,0 @@
-D:\davir\Documents\ProjetoSIN141\Projeto-Pacman-SIN141\x64\Debug\AllegroProj.exe
-C:\Users\Matheus Moreira\Documents\Projeto Pacman\AllegroProj\x64\Debug\AllegroProj.exe
