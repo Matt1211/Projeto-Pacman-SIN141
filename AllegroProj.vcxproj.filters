@@ -21,9 +21,6 @@
     <ClCompile Include="ArquivosCPP\Principal.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ArquivosCPP\EstruturasMapa.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="ArquivosCPP\Tijolo.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -32,9 +29,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ArquivosH\EstruturasMapa.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="ArquivosH\Tijolo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
