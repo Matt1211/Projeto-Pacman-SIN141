@@ -5,9 +5,10 @@
 class Tijolo
 {
 private:
-	int altura;
-	int comprimento;
+	int Altura;
+	int Comprimento;
 public:
+	void Desenhar();
 	Tijolo();
 	~Tijolo();
 };

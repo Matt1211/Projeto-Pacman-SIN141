@@ -145,7 +145,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArquivosCPP\Pilula.cpp" />
-    <ClCompile Include="ArquivosCPP\Principal.cpp" />
+    <ClCompile Include="ArquivosCPP\Main.cpp" />
     <ClCompile Include="ArquivosCPP\Tijolo.cpp" />
   </ItemGroup>
   <ItemGroup>

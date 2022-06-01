@@ -18,7 +18,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ArquivosCPP\Principal.cpp">
+    <ClCompile Include="ArquivosCPP\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ArquivosCPP\Tijolo.cpp">
