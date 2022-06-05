@@ -12,13 +12,13 @@ int main() {
 		return -1;
 	}
 
-	al_init_image_addon();
-
 	display = al_create_display(880, 600);
 	if (!display) {
 		cout << "Failed to create the display!" << endl;
 		return -1;
 	}
+
+	al_init_image_addon();
 
 	RenderizaMapa();
 
