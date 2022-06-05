@@ -1,8 +1,6 @@
 #ifndef PILULA_H
 #define	PILULA_H
 
-// Classe de pilulas que herda da classe base EstruturasMapa
-
 class Pilula
 {
 private:

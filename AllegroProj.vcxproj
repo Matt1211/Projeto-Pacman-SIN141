@@ -149,6 +149,7 @@
     <ClCompile Include="ArquivosCPP\Tijolo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ArquivosH\MapUtils.h" />
     <ClInclude Include="ArquivosH\Pilula.h" />
     <ClInclude Include="ArquivosH\Tijolo.h" />
   </ItemGroup>

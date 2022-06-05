@@ -35,5 +35,8 @@
     <ClInclude Include="ArquivosH\Pilula.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ArquivosH\MapUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
