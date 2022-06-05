@@ -18,10 +18,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ArquivosCPP\Principal.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ArquivosCPP\EstruturasMapa.cpp">
+    <ClCompile Include="ArquivosCPP\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ArquivosCPP\Tijolo.cpp">
@@ -30,15 +27,21 @@
     <ClCompile Include="ArquivosCPP\Pilula.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ArquivosCPP\Moeda.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ArquivosH\EstruturasMapa.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="ArquivosH\Tijolo.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ArquivosH\Pilula.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ArquivosH\MapUtils.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ArquivosH\Moeda.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

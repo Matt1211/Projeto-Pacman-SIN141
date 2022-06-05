@@ -1,12 +1,15 @@
 #ifndef PILULA_H
 #define	PILULA_H
-#include "EstruturasMapa.h"
+#include <allegro5/allegro.h>
 
-// Classe de pilulas que herda da classe base EstruturasMapa
-
-class Pilula : public EstruturasMapa
+class Pilula
 {
-
+public:
+	Pilula();
+	~Pilula();
+	void renderizaPilula(int linha, int coluna);
+private:
+	ALLEGRO_BITMAP* pilulaBitmap;
 };
 
 #endif // !PILULAS_H

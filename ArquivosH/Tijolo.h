@@ -1,15 +1,15 @@
 #ifndef TIJOLO_H
 #define TIJOLO_H
+#include <allegro5/allegro.h>
 
-
-
-#include "EstruturasMapa.h"
-// Classe tijolo que herdará da classe base EstruturasMapa
-
-class Tijolo : public EstruturasMapa
+class Tijolo
 {
-
+public:
+	Tijolo();
+	~Tijolo();
+	void renderizaTijolo(int linha, int coluna);
+private:
+	ALLEGRO_BITMAP* tijoloBitmap;
 };
-
 
 #endif // !TIJOLO_H
