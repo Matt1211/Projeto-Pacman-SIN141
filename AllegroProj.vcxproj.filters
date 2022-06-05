@@ -21,9 +21,18 @@
     <ClCompile Include="ArquivosCPP\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ArquivosCPP\Tijolo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ArquivosCPP\Pilula.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArquivosH\Tijolo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ArquivosH\Pilula.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

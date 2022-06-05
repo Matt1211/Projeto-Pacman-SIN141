@@ -144,9 +144,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ArquivosCPP\Pilula.cpp" />
     <ClCompile Include="ArquivosCPP\Main.cpp" />
+    <ClCompile Include="ArquivosCPP\Tijolo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ArquivosH\Pilula.h" />
     <ClInclude Include="ArquivosH\Tijolo.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
