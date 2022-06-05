@@ -13,10 +13,6 @@ const int LINHAS = 20;
 const int COLUNAS = 31;
 bool EXIT = false;
 
-Tijolo tijoloObject;
-Moeda moedaObject;
-Pilula pilulaObject;
-
 char mapa[LINHAS][COLUNAS] = {
   "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
   "Xoooo|ooooooXXXXXoooooo|ooooX",
@@ -42,6 +38,9 @@ char mapa[LINHAS][COLUNAS] = {
 
 
 void criarMapa() {
+	Tijolo tijoloObject;
+	Moeda moedaObject;
+	Pilula pilulaObject;
 	int linha, coluna;
 	for (linha = 0; linha < LINHAS; linha++) {
 		for (coluna = 0; coluna < COLUNAS; coluna++) {

@@ -10,5 +10,5 @@ Moeda::~Moeda() {
 }
 
 void Moeda::renderizaMoeda(int linha, int coluna) {
-	al_draw_bitmap(moedaBitmap, (coluna * 30) + 8, (linha * 30) + 6, 0);
+	al_draw_bitmap(moedaBitmap, coluna * 30 + 12, linha * 30 + 12, 0);
 }
