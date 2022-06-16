@@ -13,7 +13,7 @@ int main() {
 	}
 
 	display = al_create_display(880, 600);
-	if (!display) {
+	if (!display) { 
 		cout << "Failed to create the display!" << endl;
 		return -1;
 	}

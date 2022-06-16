@@ -148,6 +148,7 @@
     <ClCompile Include="ArquivosCPP\Pilula.cpp" />
     <ClCompile Include="ArquivosCPP\Main.cpp" />
     <ClCompile Include="ArquivosCPP\Tijolo.cpp" />
+    <ClCompile Include="ArquivosH\Pacman.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArquivosH\MapUtils.h" />
