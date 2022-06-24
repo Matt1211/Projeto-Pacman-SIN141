@@ -11,21 +11,20 @@ using namespace std;
 bool teclas[255] = { false }; //Vetor de Teclas
 
 void pacmanFunction(char mapa[20][31]) {
-	al_install_keyboard();
 
 	Pacman pacmanObject;
 	// Teclas Digitadas
 	if (teclas[ALLEGRO_KEY_RIGHT]) {
-		pacmanObject.setDirection(0);
+		pacmanObject.setDirection(RIGHT);
 	}
 	else if (teclas[ALLEGRO_KEY_LEFT]) {
-		pacmanObject.setDirection(1);
+		pacmanObject.setDirection(LEFT);
 	} 
 	else if (teclas[ALLEGRO_KEY_UP]) {
-		pacmanObject.setDirection(2);
+		pacmanObject.setDirection(UP);
 	}
 	else if (teclas[ALLEGRO_KEY_DOWN]) {
-		pacmanObject.setDirection(3);
+		pacmanObject.setDirection(DOWN);
 	}
 
 	// Posiionamento X

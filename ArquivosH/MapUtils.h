@@ -7,7 +7,6 @@
 #include "../ArquivosH/Moeda.h"
 #include "../ArquivosH/Pilula.h"
 #include "../ArquivosH/Tijolo.h"
-#include "../ArquivosH/KeyboardEvents.h"
 
 using namespace std;
 
@@ -52,23 +51,9 @@ void criarMapa() {
 			}
 			else if (mapa[linha][coluna] == '|') {
 				pilulaObject.renderizaPilula(linha, coluna);
-			}
-			else if (mapa[linha][coluna] == ' ') {
-				cout << "linha: " << linha << endl << "coluna: " << coluna << endl;
 			};
 		};
 	};
 };
-
-void RenderizaMapa() {
-
-	while (true)
-	{
-		criarMapa();
-		/*pacmanFunction(mapa);*/
-		al_flip_display();
-	}
-
-}
 
 #endif // !MAPUTILS_H

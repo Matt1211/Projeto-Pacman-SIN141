@@ -1,6 +1,7 @@
 #ifndef PACMAN_H
 #define	PACMAN_H
 #include <allegro5/allegro.h>
+#include "Map.h"
 
 // 0 = Rigth; 1 = Left; 2 = UP; 3 = Down
 
@@ -8,7 +9,8 @@ enum directionEnum {
 	RIGHT = 0,
 	LEFT = 1,
 	UP = 2,
-	DOWN = 3
+	DOWN = 3,
+	STILL = 4
 };
 
 class Pacman
@@ -27,6 +29,14 @@ public:
 
 	void setDirection(int direction);
 	int getDirection();
+
+	void segueDireita(char mapa[20][31]);
+
+	void segueEsquerda(char mapa[20][31]);
+
+	void segueAcima(char mapa[20][31]);
+
+	void segueAbaixo(char mapa[20][31]);
 
 private:
 	int pacmanDirection;

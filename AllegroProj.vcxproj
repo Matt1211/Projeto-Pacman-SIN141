@@ -152,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArquivosH\KeyboardEvents.h" />
+    <ClInclude Include="ArquivosH\Map.h" />
     <ClInclude Include="ArquivosH\MapUtils.h" />
     <ClInclude Include="ArquivosH\Moeda.h" />
     <ClInclude Include="ArquivosH\Pacman.h" />
