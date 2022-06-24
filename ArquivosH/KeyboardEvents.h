@@ -20,7 +20,7 @@ void pacmanFunction(char mapa[20][31]) {
 	}
 	else if (teclas[ALLEGRO_KEY_LEFT]) {
 		pacmanObject.setDirection(1);
-	}
+	} 
 	else if (teclas[ALLEGRO_KEY_UP]) {
 		pacmanObject.setDirection(2);
 	}

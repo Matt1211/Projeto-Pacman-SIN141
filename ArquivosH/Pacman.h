@@ -2,6 +2,15 @@
 #define	PACMAN_H
 #include <allegro5/allegro.h>
 
+// 0 = Rigth; 1 = Left; 2 = UP; 3 = Down
+
+enum directionEnum {
+	RIGHT = 0,
+	LEFT = 1,
+	UP = 2,
+	DOWN = 3
+};
+
 class Pacman
 {
 public:
@@ -20,9 +29,9 @@ public:
 	int getDirection();
 
 private:
-	int direction = 0;
-	int position_x = 30 * 14;
-	int position_y = 30 * 16;
+	int pacmanDirection;
+	int pacmanPosition_x = 30 * 14;
+	int pacmanPosition_y = 30 * 16;
 	ALLEGRO_BITMAP* pacmanBitmap;
 };
 
