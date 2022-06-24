@@ -1,6 +1,7 @@
 #include <iostream>
 #include <allegro5/allegro.h>
 #include "../ArquivosH/MapUtils.h"
+#include "../ArquivosH/KeyboardEvents.h"
 
 using namespace std;
 

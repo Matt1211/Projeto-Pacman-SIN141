@@ -7,14 +7,11 @@
 #include "../ArquivosH/Moeda.h"
 #include "../ArquivosH/Pilula.h"
 #include "../ArquivosH/Tijolo.h"
+#include "../ArquivosH/KeyboardEvents.h"
 
 using namespace std;
-const int LINHAS = 20;
-const int COLUNAS = 31;
-bool teclas[255] = { false }; //Vetor de Teclas
-bool EXIT = false;
 
-char mapa[LINHAS][COLUNAS] = {
+char mapa[20][31] = {
   "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
   "Xoooo|ooooooXXXXXoooooo|ooooX",
   "XoXXXoXXXXXoXXXXXoXXXXXoXXXoX",
@@ -45,8 +42,8 @@ void criarMapa() {
 
 
 	int linha, coluna;
-	for (linha = 0; linha < LINHAS; linha++) {
-		for (coluna = 0; coluna < COLUNAS; coluna++) {
+	for (linha = 0; linha < 20; linha++) {
+		for (coluna = 0; coluna < 31; coluna++) {
 			if (mapa[linha][coluna] == 'X') {
 				tijoloObject.renderizaTijolo(linha, coluna);
 			}
@@ -61,10 +58,15 @@ void criarMapa() {
 };
 
 void RenderizaMapa() {
-	
 
+	while (true)
+	{
 		criarMapa();
+		pacmanFunction(mapa);
 		al_flip_display();
+	}
+
+
 }
 
 #endif // !MAPUTILS_H
