@@ -10,13 +10,13 @@ public:
 
 	void renderizaPacman();
 
-	int setPosition_x(int position_x, int direction);
+	void setPosition_x(int position_x, int direction);
 	int getPosition_x();
 
-	int setPosition_y(int position_y, int direction);
+	void setPosition_y(int position_y, int direction);
 	int getPosition_y();
 
-	int setDirection(int direction);
+	void setDirection(int direction);
 	int getDirection();
 
 private:
