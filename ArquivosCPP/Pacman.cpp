@@ -5,7 +5,7 @@
 
 Pacman::Pacman() {
 	pacmanBitmap = al_load_bitmap(PACMAN_IMG);
-	pacmanDirection = RIGHT;
+	pacmanDirection = STILL;
 }
 
 
