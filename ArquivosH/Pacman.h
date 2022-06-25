@@ -40,8 +40,8 @@ public:
 
 private:
 	int pacmanDirection;
-	int pacmanPosition_x = 30 * 14;
-	int pacmanPosition_y = 30 * 16;
+	int pacmanPosition_x;
+	int pacmanPosition_y;
 	ALLEGRO_BITMAP* pacmanBitmap;
 };
 

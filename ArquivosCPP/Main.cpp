@@ -7,7 +7,7 @@
 
 using namespace std;
 
-const float FPS = 60;
+const float FPS = 30;
 
 int main() {
 	ALLEGRO_DISPLAY* display = NULL;
@@ -40,12 +40,12 @@ int main() {
 	Pacman playerPacman;
 
 	criarMapa();
-	playerPacman.renderizaPacman();
 
 	while (!done)
 	{
 		ALLEGRO_EVENT events;
 		al_wait_for_event(event_queue, &events);
+		playerPacman.renderizaPacman();
 
 		if (events.type == ALLEGRO_EVENT_KEY_DOWN) {
 			switch (events.keyboard.keycode) {
@@ -73,6 +73,7 @@ int main() {
 		}
 
 		if (events.type == ALLEGRO_EVENT_TIMER) {
+			cout << playerPacman.getDirection() <<endl;
 			switch (playerPacman.getDirection())
 			{
 			case DOWN:
@@ -94,10 +95,9 @@ int main() {
 			case STILL:
 				break;
 			}
-
-			
-			al_flip_display();
 		}
+
+		al_flip_display();
 	}
 
 	al_destroy_display(display);
