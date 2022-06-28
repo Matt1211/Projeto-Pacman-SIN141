@@ -1,54 +1,85 @@
 #include "../ArquivosH/Pacman.h"
-#define PACMAN_IMG "images/pacman.bmp"
+#define PACMAN_IMG "images/pacman.jpeg"
 
 
 Pacman::Pacman() {
 	pacmanBitmap = al_load_bitmap(PACMAN_IMG);
+	pacmanDirection = STILL;
+	this->pacmanPosition_x = 30 * 14;
+	this->pacmanPosition_y = 30 * 16;
 }
 
+Pacman::~Pacman() {}
+// 0 = Rigth; 1 = Left; 2 = UP; 3 = Down
 
-Pacman::~Pacman() {
+void Pacman::setDirection(int direction) {
+	this->pacmanDirection = direction;
+} 
 
-}
-
-void Pacman::renderizaPacman() {
-	al_draw_bitmap_region(pacmanBitmap,0, this->direction * 33, 0, 0, 0, 33, 33);
-}
-
-int Pacman::setDirection(int direction) {
-	// 0 = Rigth; 1 = Left; 2 = UP; 3 = Down
-	if (direction == 1) direction = 1;
-	else if (direction == 0)  direction = 0;
-	else if (direction == 2)  direction = 2;
-	else if (direction == 3)  direction = 3;
-}
-
-int Pacman::getDirection() {
-	return this->direction;
-}
-
-int Pacman::setPosition_x(int position_x, int direction) {
-	if (direction == 0) {
-		return position_x -= 30;
+void Pacman::setPosition_x(int position_x, int direction) {
+	if (direction == RIGHT) {
+		this->pacmanPosition_x -= position_x;
 	}
 
-	if (direction == 1) {
-		return position_x += 30;
+	if (direction == LEFT) {
+		this->pacmanPosition_x += position_x;
 	}
 }
 int Pacman::getPosition_x() {
-	return this->position_x;
+	return this->pacmanPosition_x;
 }
 
-int Pacman::setPosition_y(int position_y, int direction) {
-	if (direction == 2) {
-		return position_y -= 30;
+void Pacman::setPosition_y(int position_y, int direction) {
+	if (direction == UP) {
+		this->pacmanPosition_y -= position_y;
 	}
-	if (direction == 3) {
-		return position_y += 30;
+	if (direction == DOWN) {
+		this->pacmanPosition_y += position_y;
 	}
 }
 
 int Pacman::getPosition_y() {
-	return this->position_y;
+	return this->pacmanPosition_y;
+}
+
+int Pacman::getDirection() {
+	return this->pacmanDirection;
+}
+
+void Pacman::segueDireita(char mapa[20][31])
+{
+	if (mapa[this->getPosition_y() / 30][(this->getPosition_x() - 30) / 30] != 'X')
+		this->setPosition_x(30, 0);
+	else this->setDirection(4);
+}
+
+void Pacman::segueEsquerda(char mapa[20][31])
+{
+	if (mapa[this->getPosition_y() / 30][(this->getPosition_x() + 30) / 30] != 'X')
+		this->setPosition_x(30, 1);
+	else this->setDirection(4);
+}
+
+void Pacman::segueAcima(char mapa[20][31])
+{
+	if (mapa[(this->getPosition_y() - 30) / 30][this->getPosition_x() / 30] != 'X')
+		this->setPosition_y(30, 2);
+	else this->setDirection(4);
+}
+
+void Pacman::segueAbaixo(char mapa[20][31])
+{
+	if (mapa[(this->getPosition_y() + 30) / 30][this->getPosition_x() / 30] != 'X')
+		this->setPosition_y(30, 3);
+	else this->setDirection(4);
+}
+
+void Pacman::renderizaPacman() {
+	al_draw_bitmap_region(pacmanBitmap, this->pacmanDirection * 33, 0, 33, 33, this->pacmanPosition_x, this->pacmanPosition_y, 0);
+	//	sx - x da regiao na imagem
+	//	sy - y da regiao na imagem
+	//	sw - Largura da regiao na imagem
+	//	sh - Altura da regiao na imagem
+	//	dx - posicao x na tela
+	//	dy - posicao y na tela
 }

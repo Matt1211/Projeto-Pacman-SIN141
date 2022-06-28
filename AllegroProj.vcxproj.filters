@@ -30,7 +30,7 @@
     <ClCompile Include="ArquivosCPP\Moeda.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ArquivosH\Pacman.cpp">
+    <ClCompile Include="ArquivosCPP\Pacman.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -45,6 +45,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ArquivosH\Moeda.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ArquivosH\Pacman.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ArquivosH\KeyboardEvents.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ArquivosH\Map.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

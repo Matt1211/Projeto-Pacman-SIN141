@@ -10,5 +10,5 @@ Tijolo::~Tijolo() {
 }
 
 void Tijolo::renderizaTijolo(int linha, int coluna) {
-	al_draw_bitmap(tijoloBitmap, coluna * 30 + 8, linha * 30 + 6, 0);
+	al_draw_bitmap(tijoloBitmap, coluna * 35 + 8, linha * 35 + 6, 0);
 }

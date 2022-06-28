@@ -145,14 +145,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ArquivosCPP\Moeda.cpp" />
+    <ClCompile Include="ArquivosCPP\Pacman.cpp" />
     <ClCompile Include="ArquivosCPP\Pilula.cpp" />
     <ClCompile Include="ArquivosCPP\Main.cpp" />
     <ClCompile Include="ArquivosCPP\Tijolo.cpp" />
-    <ClCompile Include="ArquivosH\Pacman.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ArquivosH\KeyboardEvents.h" />
+    <ClInclude Include="ArquivosH\Map.h" />
     <ClInclude Include="ArquivosH\MapUtils.h" />
     <ClInclude Include="ArquivosH\Moeda.h" />
+    <ClInclude Include="ArquivosH\Pacman.h" />
     <ClInclude Include="ArquivosH\Pilula.h" />
     <ClInclude Include="ArquivosH\Tijolo.h" />
   </ItemGroup>
