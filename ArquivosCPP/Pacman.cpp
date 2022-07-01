@@ -5,7 +5,7 @@
 Pacman::Pacman() {
 	pacmanBitmap = al_load_bitmap(PACMAN_IMG);
 	pacmanDirection = STILL;
-	this->pacmanPosition_x = 0;
+	this->pacmanPosition_x = 8;
 	this->pacmanPosition_y = 322;
 }
 
