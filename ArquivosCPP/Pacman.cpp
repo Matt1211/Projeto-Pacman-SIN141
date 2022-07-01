@@ -5,8 +5,8 @@
 Pacman::Pacman() {
 	pacmanBitmap = al_load_bitmap(PACMAN_IMG);
 	pacmanDirection = STILL;
-	this->pacmanPosition_x = 30 * 14;
-	this->pacmanPosition_y = 30 * 16;
+	this->pacmanPosition_x = 0;
+	this->pacmanPosition_y = 322;
 }
 
 Pacman::~Pacman() {}
@@ -14,7 +14,7 @@ Pacman::~Pacman() {}
 
 void Pacman::setDirection(int direction) {
 	this->pacmanDirection = direction;
-} 
+}
 
 void Pacman::setPosition_x(int position_x, int direction) {
 	if (direction == RIGHT) {
@@ -75,11 +75,11 @@ void Pacman::segueAbaixo(char mapa[20][31])
 }
 
 void Pacman::renderizaPacman() {
-	al_draw_bitmap_region(pacmanBitmap, this->pacmanDirection * 33, 0, 33, 33, this->pacmanPosition_x, this->pacmanPosition_y, 0);
-	//	sx - x da regiao na imagem
-	//	sy - y da regiao na imagem
-	//	sw - Largura da regiao na imagem
-	//	sh - Altura da regiao na imagem
-	//	dx - posicao x na tela
-	//	dy - posicao y na tela
+	al_draw_tinted_scaled_rotated_bitmap_region(pacmanBitmap, this->pacmanDirection * 33, 0, 33, 33, al_map_rgb(255, 255, 255), 0, 0, this->pacmanPosition_x, this->pacmanPosition_y, 0.901, 0.901 , 0, 0);
+		//	sx - x da regiao na imagem
+		//	sy - y da regiao na imagem
+		//	sw - Largura da regiao na imagem
+		//	sh - Altura da regiao na imagem
+		//	dx - posicao x na tela
+		//	dy - posicao y na tela
 }
