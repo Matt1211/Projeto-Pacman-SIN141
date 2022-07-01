@@ -19,7 +19,7 @@ public:
 	Pacman();
 	~Pacman();
 
-	void renderizaPacman();
+	void renderizaPacman(int pacmanPositionX, int pacmanPositionY, int pacmanDirection);
 
 	void setPosition_x(int position_x, int direction);
 	int getPosition_x();
@@ -30,13 +30,13 @@ public:
 	void setDirection(int direction);
 	int getDirection();
 
-	void segueDireita(char mapa[20][31]);
+	void segueDireita(char mapa[20][30]);
 
-	void segueEsquerda(char mapa[20][31]);
+	void segueEsquerda(char mapa[20][30]);
 
-	void segueAcima(char mapa[20][31]);
+	void segueAcima(char mapa[20][30]);
 
-	void segueAbaixo(char mapa[20][31]);
+	void segueAbaixo(char mapa[20][30]);
 
 private:
 	int pacmanDirection;
