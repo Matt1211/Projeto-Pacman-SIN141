@@ -12,6 +12,6 @@ Pilula::~Pilula() {
 }
 
 void Pilula::renderizaPilula(int linha, int coluna) {
-	al_draw_bitmap(pilulaBitmap, coluna * 35 + 12, linha * 35 + 12, 0);
+	al_draw_scaled_bitmap(pilulaBitmap, 0, 0, 18, 17, coluna * 35 + 12, linha * 35 + 12, 20, 20, 0);
 }
 
