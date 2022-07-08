@@ -1,4 +1,7 @@
 #include "../ArquivosH/Pacman.h"
+#include <iostream>
+#include <stdio.h>
+#include <math.h>
 #define PACMAN_IMG "images/pacman.jpeg"
 #define Tijolo '0'
 
@@ -15,8 +18,14 @@ Pacman::Pacman() {
 Pacman::~Pacman() {
 
 }
-// 0 = Rigth; 1 = Left; 2 = UP; 3 = Down; 4 = STILL
 
+void Pacman::arredondamento() {
+	this->pacmanPosition_x = ceil(this->pacmanPosition_x);
+	this->pacmanPosition_y = ceil(this->pacmanPosition_y);
+}
+
+
+// 0 = Rigth; 1 = Left; 2 = UP; 3 = Down; 4 = STILL
 void Pacman::setDirection(int direction) {
 
 	this->pacmanDirection = direction;
@@ -61,30 +70,30 @@ int Pacman::getDirection() {
 void Pacman::segueDireita(char mapa[20][30])
 {
 
-	if (mapa[this->getPosition_y() / 30][(this->getPosition_x() + 30) / 30] != Tijolo)
-		this->setPosition_x(30, 0);
+	if (mapa[this->getPosition_y() / 33][(this->getPosition_x() + 33) / 33] != Tijolo)
+		this->setPosition_x(25, 0);
 	else this->setDirection(4);
 }
-
+ 
 void Pacman::segueEsquerda(char mapa[20][30])
 {
 
-	if (mapa[this->getPosition_y() / 30][(this->getPosition_x() - 30) / 30] != Tijolo)
-		this->setPosition_x(30, 1);
+	if (mapa[this->getPosition_y() / 33][(this->getPosition_x() - 33) / 33] != Tijolo)
+		this->setPosition_x(25, 1);
 	else this->setDirection(4);
 }
 
 void Pacman::segueAcima(char mapa[20][30])
 {
-	if (mapa[(this->getPosition_y() - 30) / 30][this->getPosition_x() / 30] != Tijolo)
-		this->setPosition_y(30, 2);
+	if (mapa[(this->getPosition_y() - 33) / 33][this->getPosition_x() / 33] != Tijolo)
+		this->setPosition_y(25, 2);
 	else this->setDirection(4);
 }
 
 void Pacman::segueAbaixo(char mapa[20][30])
 {
-	if (mapa[(this->getPosition_y() + 30) / 30][this->getPosition_x() / 30] != Tijolo)
-		this->setPosition_y(30, 3);
+	if (mapa[(this->getPosition_y() + 33) / 33][this->getPosition_x() / 33] != Tijolo)
+		this->setPosition_y(25, 3);
 	else this->setDirection(4);
 }
 

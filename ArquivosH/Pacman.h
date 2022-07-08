@@ -38,6 +38,8 @@ public:
 
 	void segueAbaixo(char mapa[20][30]);
 
+	void arredondamento();
+
 private:
 	int pacmanDirection;
 	int pacmanPosition_x;
