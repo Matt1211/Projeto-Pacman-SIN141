@@ -6,7 +6,6 @@ Moeda::Moeda() {
 }
 
 Moeda::~Moeda() {
-
 }
 
 void Moeda::renderizaMoeda(int linha, int coluna) {

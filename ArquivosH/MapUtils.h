@@ -7,8 +7,11 @@
 #include "../ArquivosH/Moeda.h"
 #include "../ArquivosH/Pilula.h"
 #include "../ArquivosH/Tijolo.h"
+#include "../ArquivosH/Pacman.h"
+#include "../ArquivosH/Fantasma.h"
 
 using namespace std;
+
 
 // 0 = Tijolo; 1 = Moeda; 2 = Pilula
 
@@ -22,9 +25,9 @@ char mapa[20][30] = {
   "01111100111110001111100111110",
   "01000100000010001000000100010",
   "01000100111121112111100100010",
-  " 111110010000000000010011111 ",
+  "01111100100000000000100111110",
   "01000100100000000000100100010",
-  "01000100111111111111100100010",
+  "01000100111111 11111100100010",
   "01000100000010001000000100010",
   "01111100111110001111100111110",
   "01000100100000000000100100010",
@@ -40,7 +43,9 @@ void criarMapa() {
 	Tijolo tijoloObject;
 	Moeda moedaObject;
 	Pilula pilulaObject;
-
+	Pacman playerPacman;
+	cout << playerPacman.getPosition_y() / 33 << endl;
+	cout << playerPacman.getPosition_x() / 33 << endl;
 
 	int linha, coluna;
 	for (linha = 0; linha < 20; linha++) {
@@ -50,12 +55,32 @@ void criarMapa() {
 			}
 			else if (mapa[linha][coluna] == '1') {
 				moedaObject.renderizaMoeda(linha, coluna);
+				if (playerPacman.getPosition_x() / 33 == linha && playerPacman.getPosition_y() / 33 == coluna) {
+					mapa[linha][coluna] = '  ';
+				}
 			}
 			else if (mapa[linha][coluna] == '2') {
 				pilulaObject.renderizaPilula(linha, coluna);
-			};
+				if (playerPacman.getPosition_y() / 33 == linha && playerPacman.getPosition_x() / 33 == coluna) {
+						mapa[linha][coluna] = '  ';
+				 }
+			}
 		};
 	};
 };
+
+//void destruirMapa() {
+//	Tijolo tijoloObject;
+//	Moeda moedaObject;
+//	Pilula pilulaObject;
+//	Pacman playerPacman;
+//	Fantasma playerFantasma;
+//
+//	tijoloObject.~Tijolo();
+//	moedaObject.~Moeda();
+//	pilulaObject.~Pilula();
+//	playerPacman.~Pacman();
+//	playerFantasma.~Fantasma();
+//}
 
 #endif // !MAPUTILS_H
