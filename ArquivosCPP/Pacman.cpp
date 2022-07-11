@@ -9,8 +9,8 @@ Pacman::Pacman() {
 
 	pacmanBitmap = al_load_bitmap(PACMAN_IMG);
 	pacmanDirection = STILL;
-	pacmanPosition_x = 8;
-	pacmanPosition_y = 322;
+	pacmanPosition_x = 33 * 14;
+	pacmanPosition_y = 33 * 16;
 
 	renderizaPacman(pacmanPosition_x, pacmanPosition_y, pacmanDirection);
 }
