@@ -9,8 +9,8 @@ Pacman::Pacman() {
 
 	pacmanBitmap = al_load_bitmap(PACMAN_IMG);
 	pacmanDirection = STILL;
-	pacmanPosition_x = 8;
-	pacmanPosition_y = 322;
+	pacmanPosition_x = 33 * 14;
+	pacmanPosition_y = 33 * 16;
 
 	renderizaPacman(pacmanPosition_x, pacmanPosition_y, pacmanDirection);
 }
@@ -71,30 +71,30 @@ void Pacman::segueDireita(char mapa[20][30])
 {
 
 	if (mapa[this->getPosition_y() / 33][(this->getPosition_x() + 33) / 33] != Tijolo)
-		this->setPosition_x(25, 0);
-	else this->setDirection(4);
+		this->setPosition_x(33, RIGHT);
+	else this->setDirection(STILL);
 }
- 
+
 void Pacman::segueEsquerda(char mapa[20][30])
 {
 
 	if (mapa[this->getPosition_y() / 33][(this->getPosition_x() - 33) / 33] != Tijolo)
-		this->setPosition_x(25, 1);
-	else this->setDirection(4);
+		this->setPosition_x(33, LEFT);
+	else this->setDirection(STILL);
 }
 
 void Pacman::segueAcima(char mapa[20][30])
 {
 	if (mapa[(this->getPosition_y() - 33) / 33][this->getPosition_x() / 33] != Tijolo)
-		this->setPosition_y(25, 2);
-	else this->setDirection(4);
+		this->setPosition_y(33, UP);
+	else this->setDirection(STILL);
 }
 
 void Pacman::segueAbaixo(char mapa[20][30])
 {
 	if (mapa[(this->getPosition_y() + 33) / 33][this->getPosition_x() / 33] != Tijolo)
-		this->setPosition_y(25, 3);
-	else this->setDirection(4);
+		this->setPosition_y(33, DOWN);
+	else this->setDirection(STILL);
 }
 
 void Pacman::renderizaPacman(int pacmanPositionX, int pacmanPositionY, int pacmanDirection) {
@@ -108,8 +108,8 @@ void Pacman::renderizaPacman(int pacmanPositionX, int pacmanPositionY, int pacma
 		al_map_rgb(255, 255, 255),
 		0,
 		0,
-		pacmanPositionX,     //	dx - posicao x na tela
-		pacmanPositionY,		//	dy - posicao y na tela			
+		pacmanPositionX + 8,     //	dx - posicao x na tela
+		pacmanPositionY + 6,		//	dy - posicao y na tela			
 		0.901,
 		0.901,
 		0,
