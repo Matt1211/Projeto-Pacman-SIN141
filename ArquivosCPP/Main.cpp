@@ -39,13 +39,12 @@ int main() {
 
 	Pacman playerPacman;
 
-	criarMapa();
 
 	while (!done)
 	{
 		ALLEGRO_EVENT events;
 		al_wait_for_event(event_queue, &events);
-		playerPacman.renderizaPacman();
+		playerPacman.arredondamento();
 
 		if (events.type == ALLEGRO_EVENT_KEY_DOWN) {
 			switch (events.keyboard.keycode) {
@@ -73,7 +72,7 @@ int main() {
 		}
 
 		if (events.type == ALLEGRO_EVENT_TIMER) {
-			cout << playerPacman.getDirection() <<endl;
+
 			switch (playerPacman.getDirection())
 			{
 			case DOWN:
@@ -96,6 +95,12 @@ int main() {
 				break;
 			}
 		}
+		al_clear_to_color(al_map_rgb(0, 0, 0));
+		criarMapa();
+		playerPacman.renderizaPacman(
+			playerPacman.getPosition_x(),
+			playerPacman.getPosition_y(),
+			playerPacman.getDirection());
 
 		al_flip_display();
 	}
