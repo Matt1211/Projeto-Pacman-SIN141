@@ -3,11 +3,10 @@
 #include <allegro5/allegro.h>
 #include "Map.h"
 
-// 0 = Rigth; 1 = Left; 2 = UP; 3 = Down
 
 enum directionEnum {
-	RIGHT = 0,
-	LEFT = 1,
+	RIGHT = 1,
+	LEFT = 0,
 	UP = 2,
 	DOWN = 3,
 	STILL = 4

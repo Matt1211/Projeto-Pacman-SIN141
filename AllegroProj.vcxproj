@@ -120,7 +120,7 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -151,7 +151,6 @@
     <ClCompile Include="ArquivosCPP\Tijolo.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ArquivosH\KeyboardEvents.h" />
     <ClInclude Include="ArquivosH\Map.h" />
     <ClInclude Include="ArquivosH\MapUtils.h" />
     <ClInclude Include="ArquivosH\Moeda.h" />

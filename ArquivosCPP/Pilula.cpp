@@ -8,7 +8,6 @@ Pilula::Pilula() {
 
 
 Pilula::~Pilula() {
-
 }
 
 void Pilula::renderizaPilula(int linha, int coluna) {
