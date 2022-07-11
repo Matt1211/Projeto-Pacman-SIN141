@@ -5,8 +5,8 @@
 Pacman::Pacman() {
 	pacmanBitmap = al_load_bitmap(PACMAN_IMG);
 	pacmanDirection = STILL;
-	this->pacmanPosition_x = 33 * 14;
-	this->pacmanPosition_y = 33 * 16;
+	this->pacmanPosition_x = 30 * 14;
+	this->pacmanPosition_y = 30 * 16;
 }
 
 Pacman::~Pacman() {}
@@ -48,34 +48,34 @@ int Pacman::getDirection() {
 
 void Pacman::segueDireita(char mapa[20][31])
 {
-	if (mapa[this->getPosition_y() / 33][(this->getPosition_x() - 33) / 33] != 'X')
-		this->setPosition_x(33, 0);
-	else this->setDirection(0);
+	if (mapa[this->getPosition_y() / 30][(this->getPosition_x() - 30) / 30] != 'X')
+		this->setPosition_x(30, 0);
+	else this->setDirection(4);
 }
 
 void Pacman::segueEsquerda(char mapa[20][31])
 {
-	if (mapa[this->getPosition_y() / 33][(this->getPosition_x() + 33) / 33] != 'X')
-		this->setPosition_x(33, 1);
-	else this->setDirection(0);
+	if (mapa[this->getPosition_y() / 30][(this->getPosition_x() + 30) / 30] != 'X')
+		this->setPosition_x(30, 1);
+	else this->setDirection(4);
 }
 
 void Pacman::segueAcima(char mapa[20][31])
 {
-	if (mapa[(this->getPosition_y() - 33) / 33][this->getPosition_x() / 33] != 'X')
-		this->setPosition_y(33, 2);
-	else this->setDirection(0);
+	if (mapa[(this->getPosition_y() - 30) / 30][this->getPosition_x() / 30] != 'X')
+		this->setPosition_y(30, 2);
+	else this->setDirection(4);
 }
 
 void Pacman::segueAbaixo(char mapa[20][31])
 {
-	if (mapa[(this->getPosition_y() + 33) / 33][this->getPosition_x() / 33] != 'X')
-		this->setPosition_y(33, 3);
-	else this->setDirection(0);
+	if (mapa[(this->getPosition_y() + 30) / 30][this->getPosition_x() / 30] != 'X')
+		this->setPosition_y(30, 3);
+	else this->setDirection(4);
 }
 
 void Pacman::renderizaPacman() {
-	al_draw_bitmap_region(pacmanBitmap, this->pacmanDirection * 33, 0, 33, 33, this->pacmanPosition_x + 8, this->pacmanPosition_y + 6, 0);
+	al_draw_bitmap_region(pacmanBitmap, this->pacmanDirection * 33, 0, 33, 33, this->pacmanPosition_x, this->pacmanPosition_y, 0);
 	//	sx - x da regiao na imagem
 	//	sy - y da regiao na imagem
 	//	sw - Largura da regiao na imagem

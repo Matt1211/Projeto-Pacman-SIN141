@@ -12,9 +12,9 @@ using namespace std;
 
 char mapa[20][31] = {
   "XXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-  "Xoooo|ooooooX   Xoooooo|ooooX",
-  "XoXXXoXXXXXoX   XoXXXXXoXXXoX",
-  "XoXXXoXXXXXoXX XXoXXXXXoXXXoX",
+  "Xoooo|ooooooXXXXXoooooo|ooooX",
+  "XoXXXoXXXXXoXXXXXoXXXXXoXXXoX",
+  "XoXXXoXXXXXoXXXXXoXXXXXoXXXoX",
   "XoooooooooooooooooooooooooooX",
   "XoXXXoXXoXXXXXXXXXXXoXXoXXXoX",
   "XoooooXXoooooXXXoooooXXoooooX",
