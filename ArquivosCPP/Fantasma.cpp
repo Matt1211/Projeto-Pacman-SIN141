@@ -93,21 +93,11 @@ void Fantasma::segueAbaixo(char mapa[20][30])
 
 void Fantasma::renderizaFantasma(char mapa[20][30]) {
 
-	al_draw_tinted_scaled_rotated_bitmap_region(
-		fantasmaBitmap,
-		33, //	sx - x da regiao na imagem
-		0,					//	sy - y da regiao na imagem
-		33,					//	sw - Largura da regiao na imagem
-		33,					//	sh - Altura da regiao na imagem
-		al_map_rgb(255, 255, 255),
-		0,
-		0,
-		this->fantasmaPosition_x + 8,     //	dx - posicao x na tela
-		this->fantasmaPosition_y + 6,	//	dy - posicao y na tela			
-		0.901,
-		0.901,
-		0,
-		0);
+	al_draw_bitmap_region(fantasmaBitmap, 0, 0, 33, 33, this->fantasmaPosition_x + 8, this->fantasmaPosition_y + 6, 0);
+
+	if (mapa[this->fantasmaPosition_x /30][this->fantasmaPosition_x /30] == Tijolo) {
+		this->fantasmaDirection = rand() % 4;
+	}
 
 	if (getDirection() == 0) {
 		segueDireita(mapa);

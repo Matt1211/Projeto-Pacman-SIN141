@@ -33,6 +33,9 @@
     <ClCompile Include="ArquivosCPP\Pacman.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ArquivosCPP\Fantasma.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArquivosH\Tijolo.h">
@@ -51,6 +54,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ArquivosH\Map.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ArquivosH\Fantasma.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
