@@ -120,7 +120,7 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -144,6 +144,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="ArquivosCPP\Fantasma.cpp" />
     <ClCompile Include="ArquivosCPP\Moeda.cpp" />
     <ClCompile Include="ArquivosCPP\Pacman.cpp" />
     <ClCompile Include="ArquivosCPP\Pilula.cpp" />
@@ -151,7 +152,7 @@
     <ClCompile Include="ArquivosCPP\Tijolo.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ArquivosH\KeyboardEvents.h" />
+    <ClInclude Include="ArquivosH\Fantasma.h" />
     <ClInclude Include="ArquivosH\Map.h" />
     <ClInclude Include="ArquivosH\MapUtils.h" />
     <ClInclude Include="ArquivosH\Moeda.h" />

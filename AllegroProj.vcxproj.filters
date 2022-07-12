@@ -33,6 +33,9 @@
     <ClCompile Include="ArquivosCPP\Pacman.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ArquivosCPP\Fantasma.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArquivosH\Tijolo.h">
@@ -50,10 +53,10 @@
     <ClInclude Include="ArquivosH\Pacman.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ArquivosH\KeyboardEvents.h">
+    <ClInclude Include="ArquivosH\Map.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ArquivosH\Map.h">
+    <ClInclude Include="ArquivosH\Fantasma.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
