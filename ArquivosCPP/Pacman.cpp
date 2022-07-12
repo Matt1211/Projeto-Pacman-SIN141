@@ -10,12 +10,13 @@ Pacman::Pacman() {
 	pacmanBitmap = al_load_bitmap(PACMAN_IMG);
 	pacmanDirection = STILL;
 	pacmanPosition_x = 33 * 14;
-	pacmanPosition_y = 33 * 11;
+	pacmanPosition_y = 33 * 16;
 
 	renderizaPacman(pacmanPosition_x, pacmanPosition_y, pacmanDirection);
 }
 
 Pacman::~Pacman() {
+
 }
 
 void Pacman::arredondamento() {
@@ -24,6 +25,7 @@ void Pacman::arredondamento() {
 }
 
 
+// 0 = Rigth; 1 = Left; 2 = UP; 3 = Down; 4 = STILL
 void Pacman::setDirection(int direction) {
 
 	this->pacmanDirection = direction;

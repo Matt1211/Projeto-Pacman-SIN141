@@ -6,6 +6,7 @@ Tijolo::Tijolo() {
 }
 
 Tijolo::~Tijolo() {
+
 }
 
 void Tijolo::renderizaTijolo(int linha, int coluna) {
