@@ -17,7 +17,7 @@
 
 using namespace std;
 
-const float FPS = 6.6;
+const float FPS = 60;
 
 int main() {
 	ALLEGRO_DISPLAY* display = NULL;
