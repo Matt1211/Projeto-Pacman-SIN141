@@ -4,6 +4,8 @@
 #include <math.h>
 #define PACMAN_IMG "images/pacman.jpeg"
 #define Tijolo '0'
+#define Moeda '1'
+#define Pilula '2'
 
 Pacman::Pacman() {
 
@@ -21,6 +23,15 @@ Pacman::~Pacman() {
 void Pacman::arredondamento() {
 	this->pacmanPosition_x = ceil(this->pacmanPosition_x);
 	this->pacmanPosition_y = ceil(this->pacmanPosition_y);
+}
+
+void Pacman::checaPontuacao(char mapa[20][30], int posicaoX, int posicaoY, int& pontuacao)
+{
+	if (mapa[posicaoX][posicaoY] == Moeda)
+		pontuacao++;
+
+	if (mapa[posicaoX][posicaoY] == Pilula)
+		pontuacao += 10;
 }
 
 

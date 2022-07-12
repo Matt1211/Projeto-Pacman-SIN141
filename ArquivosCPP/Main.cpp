@@ -70,7 +70,6 @@ int main() {
 	int pontos = 0;
 	while (!done)
 	{
-		pontos++;
 
 		ALLEGRO_EVENT events;
 		al_wait_for_event(event_queue, &events);
@@ -137,6 +136,12 @@ int main() {
 			playerPacman.getPosition_y(),
 			playerPacman.getDirection()
 		);
+
+		playerPacman.checaPontuacao(
+			mapa,
+			playerPacman.getPosition_x(),
+			playerPacman.getPosition_y(),
+			pontos);
 
 		playerFantasmaAmarelo.renderizaFantasma(mapa);
 		playerFantasmaAzul.renderizaFantasma(mapa);

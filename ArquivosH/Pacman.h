@@ -39,6 +39,8 @@ public:
 
 	void arredondamento();
 
+	void checaPontuacao(char mapa[20][30], int posicaoX, int posicaoY, int& pontuacao);
+
 private:
 	int pacmanDirection;
 	int pacmanPosition_x;
