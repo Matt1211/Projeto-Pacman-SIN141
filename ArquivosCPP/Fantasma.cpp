@@ -2,15 +2,46 @@
 #include <iostream>
 #include <stdio.h>
 #include <math.h>
-#define FANTASMA_IMG "images/fantasma.bmp"
+
+#define FANTASMA_AMARELO_IMG "images/fantasmaAmarelo.bmp"
+#define FANTASMA_AZUL_IMG "images/fantasmaAzul.bmp"
+#define FANTASMA_LARANJA_IMG "images/fantasmaLaranja.bmp"
+#define FANTASMA_ROSA_IMG "images/fantasmaRosa.bmp"
+
 #define Tijolo '0'
 
 Fantasma::Fantasma() {
 
-	fantasmaBitmap = al_load_bitmap(FANTASMA_IMG);
 	fantasmaDirection = 0;
 	fantasmaPosition_x = 33 * 14;
 	fantasmaPosition_y = 33 * 15;
+	char map[20][30];
+
+	renderizaFantasma(map);
+
+}
+
+Fantasma::Fantasma(char cor, int position_x, int position_y) {
+
+	if (cor == 'M') {
+		fantasmaBitmap = al_load_bitmap(FANTASMA_AMARELO_IMG);
+	}
+
+	if (cor == 'A') {
+		fantasmaBitmap = al_load_bitmap(FANTASMA_AZUL_IMG);
+	}
+
+	if (cor == 'L') {
+		fantasmaBitmap = al_load_bitmap(FANTASMA_LARANJA_IMG);
+	}
+
+	if (cor == 'R') {
+		fantasmaBitmap = al_load_bitmap(FANTASMA_ROSA_IMG);
+	}
+
+	fantasmaDirection = 0;
+	fantasmaPosition_x = 33 * position_x;
+	fantasmaPosition_y = 33 * position_y;
 	char map[20][30];
 
 	renderizaFantasma(map);
@@ -95,8 +126,8 @@ void Fantasma::renderizaFantasma(char mapa[20][30]) {
 
 	al_draw_bitmap_region(fantasmaBitmap, 0, 0, 33, 33, this->fantasmaPosition_x + 8, this->fantasmaPosition_y + 6, 0);
 
-	if (mapa[this->fantasmaPosition_x /30][this->fantasmaPosition_x /30] == Tijolo) {
-		this->fantasmaDirection = rand() % 4;
+	if (mapa[this->fantasmaPosition_y/33][this->fantasmaPosition_x/33] == Tijolo) {
+		this->fantasmaDirection = rand() % (4 * this->fantasmaPosition_x * this->fantasmaPosition_y);
 	}
 
 	if (getDirection() == 0) {
