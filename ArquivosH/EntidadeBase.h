@@ -15,22 +15,25 @@ class EntidadeBase
 {
 public:
 
-	virtual void setPosition_x(int position_x, char direction) = 0;
-	virtual int getPosition_x() = 0;
+	EntidadeBase();
+	~EntidadeBase();
 
-	virtual void setPosition_y(int position_y, char direction) = 0;
-	virtual int getPosition_y() = 0;
+	void setPosition_x(int position_x, char direction);
+	int getPosition_x();
+
+	void setPosition_y(int position_y, char direction);
+	int getPosition_y();
 
 	virtual void setDirection() = 0;
-	virtual int getDirection() = 0;
+	int getDirection();
 
-	virtual void segueDireita(char mapa[20][30]) = 0;
+	void segueDireita(char mapa[20][30]);
 
-	virtual void segueEsquerda(char mapa[20][30]) = 0;
+	void segueEsquerda(char mapa[20][30]);
 
-	virtual void segueAcima(char mapa[20][30]) = 0;
+	void segueAcima(char mapa[20][30]);
 
-	virtual void segueAbaixo(char mapa[20][30]) = 0;
+	void segueAbaixo(char mapa[20][30]);
 
 private:
 	int entityDirection;
