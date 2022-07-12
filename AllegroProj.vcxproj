@@ -153,7 +153,6 @@
     <ClInclude Include="ArquivosH\Map.h" />
     <ClInclude Include="ArquivosH\MapUtils.h" />
     <ClInclude Include="ArquivosH\Moeda.h" />
-    <ClInclude Include="ArquivosH\Movimentacao.h" />
     <ClInclude Include="ArquivosH\Pacman.h" />
     <ClInclude Include="ArquivosH\Pilula.h" />
     <ClInclude Include="ArquivosH\Tijolo.h" />

@@ -56,9 +56,6 @@
     <ClInclude Include="ArquivosH\Fantasma.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ArquivosH\Movimentacao.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

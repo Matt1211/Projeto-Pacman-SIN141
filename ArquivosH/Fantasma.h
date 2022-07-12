@@ -1,3 +1,4 @@
+#pragma once
 #ifndef FANTASMA_H
 #define	FANTASMA_H
 #include <allegro5/allegro.h>

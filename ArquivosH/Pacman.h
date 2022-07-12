@@ -3,6 +3,15 @@
 #include <allegro5/allegro.h>
 #include "Map.h"
 
+
+enum directionEnum {
+	RIGHT = 1,
+	LEFT = 0,
+	UP = 2,
+	DOWN = 3,
+	STILL = 4
+};
+
 class Pacman
 {
 public:
