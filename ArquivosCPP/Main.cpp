@@ -137,11 +137,7 @@ int main() {
 			playerPacman.getDirection()
 		);
 
-		playerPacman.checaPontuacao(
-			mapa,
-			playerPacman.getPosition_x(),
-			playerPacman.getPosition_y(),
-			pontos);
+		playerPacman.checaPontuacao(mapa, playerPacman.getPosition_x(),playerPacman.getPosition_y());
 
 		playerFantasmaAmarelo.renderizaFantasma(mapa);
 		playerFantasmaAzul.renderizaFantasma(mapa);
@@ -149,7 +145,7 @@ int main() {
 		playerFantasmaRosa.renderizaFantasma(mapa);
 
 		/*destruirMapa();*/
-		al_draw_textf(fonte, al_map_rgb(255, 255, 255), 1050, 150, 0, "SCORE: %d", pontos);
+		al_draw_textf(fonte, al_map_rgb(255, 255, 255), 1050, 150, 0, "SCORE: %d", playerPacman.getPontuacao());
 
 		al_flip_display();
 	}

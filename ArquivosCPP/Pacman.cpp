@@ -13,6 +13,7 @@ Pacman::Pacman() {
 	pacmanDirection = STILL;
 	pacmanPosition_x = 33 * 14;
 	pacmanPosition_y = 33 * 11;
+	pontuacao = 0;
 
 	renderizaPacman(pacmanPosition_x, pacmanPosition_y, pacmanDirection);
 }
@@ -25,13 +26,20 @@ void Pacman::arredondamento() {
 	this->pacmanPosition_y = ceil(this->pacmanPosition_y);
 }
 
-void Pacman::checaPontuacao(char mapa[20][30], int posicaoX, int posicaoY, int& pontuacao)
-{
-	if (mapa[posicaoX][posicaoY] == Moeda)
-		pontuacao++;
+void Pacman::setPontuacao(int pontuacao) {
+	this->pontuacao = pontuacao;
+}
+int Pacman::getPontuacao() {
+	return this->pontuacao;
+};
 
-	if (mapa[posicaoX][posicaoY] == Pilula)
-		pontuacao += 10;
+void Pacman::checaPontuacao(char mapa[20][30], int posicaoX, int posicaoY)
+{
+	if (mapa[posicaoX / 33][posicaoY / 33] == Moeda)
+		this->pontuacao++;
+
+	if (mapa[posicaoX / 33][posicaoY / 33] == Pilula)
+		this->pontuacao += 10;
 }
 
 
