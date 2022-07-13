@@ -68,7 +68,7 @@ int main() {
 	Pilula pilulaObject;
 
 	al_start_timer(timer);
-	int pontos = 0;
+	int pontos = 0, linha = 20, coluna = 30;
 	while (!done)
 	{
 
@@ -139,25 +139,25 @@ int main() {
 			playerPacman.getDirection()
 		);
 
-		if (mapa[playerPacman.getPosition_x() / 33][playerPacman.getPosition_y() / 33] == '1') {
-			mapa[playerPacman.getPosition_x() / 33][playerPacman.getPosition_y() / 33] = ' ';
-			pontos++;
-		};
-
-		if (mapa[playerPacman.getPosition_x() / 33][playerPacman.getPosition_y() / 33] == '2') {
-			mapa[playerPacman.getPosition_x() / 33][playerPacman.getPosition_y() / 33] = ' ';
-			pontos+=10;
-		};
-
 		playerFantasmaAmarelo.renderizaFantasma(mapa);
 		playerFantasmaAzul.renderizaFantasma(mapa);
 		playerFantasmaLaranja.renderizaFantasma(mapa);
 		playerFantasmaRosa.renderizaFantasma(mapa);
 
+		if (mapa[playerPacman.getPosition_y() / 33][playerPacman.getPosition_x() / 33] == '1') {
+			mapa[playerPacman.getPosition_y() / 33][playerPacman.getPosition_x() / 33] = ' ';
+			pontos++;
+		};
+
+		if (mapa[playerPacman.getPosition_y() / 33][playerPacman.getPosition_x() / 33] == '2') {
+			mapa[playerPacman.getPosition_y() / 33][playerPacman.getPosition_x() / 33] = ' ';
+			pontos++;
+		};
+
 		/*destruirMapa();*/
 		al_draw_textf(fonte, al_map_rgb(255, 255, 255), 1050, 150, 0, "SCORE: %d", pontos);
 
-		/*pilulaObject.destruirPilula();*/
+
 		al_flip_display();
 	}
 	al_stop_sample_instance(instance);
