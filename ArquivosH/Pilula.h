@@ -8,6 +8,7 @@ public:
 	Pilula();
 	~Pilula();
 	void renderizaPilula(int linha, int coluna);
+	void destruirPilula();
 private:
 	ALLEGRO_BITMAP* pilulaBitmap;
 };

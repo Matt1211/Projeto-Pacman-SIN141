@@ -4,17 +4,21 @@
 #include <allegro5/allegro_primitives.h>
 #include "allegro5/allegro_audio.h"
 #include "allegro5/allegro_acodec.h"
+#include <allegro5/allegro_ttf.h>
+#include <allegro5/allegro_font.h>
 
 #include "../ArquivosH/MapUtils.h"
 #include "../ArquivosH/Pacman.h"
+#include "../ArquivosH/Pilula.h"
 #include "../ArquivosH/Map.h"
 #include "../ArquivosH/Fantasma.h"
 
 #define PACMAN_MUSIC "images/Pac_man.mp3"
+#define FONTE_ARIAL "images/arial.ttf"
 
 using namespace std;
 
-const float FPS = 10;
+const float FPS = 6.5;
 
 int main() {
 	ALLEGRO_DISPLAY* display = NULL;
@@ -34,9 +38,13 @@ int main() {
 
 	al_init_image_addon();
 	al_install_keyboard();
+	al_init_font_addon();
+	al_init_ttf_addon();
+
+	ALLEGRO_FONT* fonte = NULL;
+	fonte = al_load_font(FONTE_ARIAL, 28, 0);
 
 	bool done = false;
-
 	ALLEGRO_TIMER* timer = al_create_timer(1.0 / FPS);
 	ALLEGRO_EVENT_QUEUE* event_queue = al_create_event_queue();
 	al_register_event_source(event_queue, al_get_display_event_source(display));
@@ -52,18 +60,18 @@ int main() {
 
 	al_attach_sample_instance_to_mixer(instance, al_get_default_mixer());
 
-	if (!sample) {
-		printf("Audio clip sample not loaded!\n");
-		return -1;
-	}
-
 	Pacman playerPacman;
-	Fantasma playerFantasma;
+	Fantasma playerFantasmaAmarelo('M', 15, 15); //Amarelo
+	Fantasma playerFantasmaAzul('A', 12, 15); //Azul
+	Fantasma playerFantasmaLaranja('L', 18, 15); //Laranja
+	Fantasma playerFantasmaRosa('R', 14, 15); //Rosa
+	Pilula pilulaObject;
 
 	al_start_timer(timer);
-
-	while (!done)
+	int pontos = 0, linha = 20, coluna = 30;
+	while (!done || pontos == 308)
 	{
+
 		ALLEGRO_EVENT events;
 		al_wait_for_event(event_queue, &events);
 		al_clear_to_color(al_map_rgb(0, 0, 0));
@@ -122,6 +130,7 @@ int main() {
 			}
 		}
 
+
 		playerPacman.arredondamento();
 
 		playerPacman.renderizaPacman(
@@ -130,9 +139,56 @@ int main() {
 			playerPacman.getDirection()
 		);
 
-		playerFantasma.renderizaFantasma(mapa);
+		playerFantasmaAmarelo.renderizaFantasma(mapa);
+		playerFantasmaAzul.renderizaFantasma(mapa);
+		playerFantasmaLaranja.renderizaFantasma(mapa);
+		playerFantasmaRosa.renderizaFantasma(mapa);
+
+		if (mapa[playerPacman.getPosition_y() / 33][playerPacman.getPosition_x() / 33] == '1') {
+			mapa[playerPacman.getPosition_y() / 33][playerPacman.getPosition_x() / 33] = ' ';
+			pontos++;
+		};
+
+		if (mapa[playerPacman.getPosition_y() / 33][playerPacman.getPosition_x() / 33] == '2') {
+			mapa[playerPacman.getPosition_y() / 33][playerPacman.getPosition_x() / 33] = ' ';
+			pontos += 10;
+		};
+
+		if (
+			playerFantasmaAzul.getPosition_y() == playerPacman.getPosition_y()
+											&&
+			playerFantasmaAzul.getPosition_x() == playerPacman.getPosition_x())
+		{
+			done = true;
+		}
+
+		if (
+			playerFantasmaAmarelo.getPosition_y() == playerPacman.getPosition_y()
+											&&
+			playerFantasmaAmarelo.getPosition_x() == playerPacman.getPosition_x())
+		{
+			done = true;
+		}
+
+		if (
+			playerFantasmaLaranja.getPosition_y() == playerPacman.getPosition_y()
+											&&
+			playerFantasmaLaranja.getPosition_x() == playerPacman.getPosition_x())
+		{
+			done = true;
+		}
+
+		if (
+			playerFantasmaRosa.getPosition_y() == playerPacman.getPosition_y()
+											&&
+			playerFantasmaRosa.getPosition_x() == playerPacman.getPosition_x())
+		{
+			done = true;
+		}
 
 		/*destruirMapa();*/
+		al_draw_textf(fonte, al_map_rgb(255, 255, 255), 1050, 150, 0, "SCORE: %d", pontos);
+
 
 		al_flip_display();
 	}
@@ -141,10 +197,6 @@ int main() {
 	al_destroy_display(display);
 	al_destroy_sample(sample);
 	al_destroy_sample_instance(instance);
-	//al_destroy_bitmap(tijoloBitmap);
-	//al_destroy_bitmap(moedaBitmap);
-	//al_destroy_bitmap(pilulaBitmap);
-	//al_destroy_bitmap(pacmanBitmap);
 	al_destroy_event_queue(event_queue);
 	al_uninstall_system();
 

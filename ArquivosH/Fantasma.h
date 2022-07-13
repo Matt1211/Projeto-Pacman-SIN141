@@ -8,6 +8,7 @@ class Fantasma
 {
 public:
 	Fantasma();
+	Fantasma(char cor, int position_x, int position_y);
 	~Fantasma();
 
 	void renderizaFantasma(char mapa[20][30]);
@@ -30,6 +31,7 @@ public:
 	void segueAbaixo(char mapa[20][30]);
 
 private:
+	char cor;
 	int fantasmaDirection;
 	int fantasmaPosition_x;
 	int fantasmaPosition_y;

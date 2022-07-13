@@ -39,10 +39,16 @@ public:
 
 	void arredondamento();
 
+	void checaPontuacao(char mapa[20][30], int posicaoX, int posicaoY);
+
+	void setPontuacao(int pontuacao);
+	int getPontuacao();
+
 private:
 	int pacmanDirection;
 	int pacmanPosition_x;
 	int pacmanPosition_y;
+	int pontuacao;
 	ALLEGRO_BITMAP* pacmanBitmap;
 };
 

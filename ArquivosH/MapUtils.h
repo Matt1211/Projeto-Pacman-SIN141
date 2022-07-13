@@ -54,9 +54,10 @@ void criarMapa() {
 				tijoloObject.renderizaTijolo(linha, coluna);
 			}
 			else if (mapa[linha][coluna] == '1') {
-				moedaObject.renderizaMoeda(linha, coluna);
 				if (playerPacman.getPosition_x() / 33 == linha && playerPacman.getPosition_y() / 33 == coluna) {
 					mapa[linha][coluna] = '  ';
+				}else {
+					moedaObject.renderizaMoeda(linha, coluna);
 				}
 			}
 			else if (mapa[linha][coluna] == '2') {
@@ -67,6 +68,7 @@ void criarMapa() {
 			}
 		};
 	};
+
 };
 
 //void destruirMapa() {
