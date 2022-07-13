@@ -10,6 +10,10 @@ Pilula::Pilula() {
 Pilula::~Pilula() {
 }
 
+void Pilula::destruirPilula() {
+	al_destroy_bitmap(pilulaBitmap);
+}
+
 void Pilula::renderizaPilula(int linha, int coluna) {
 	al_draw_scaled_bitmap(pilulaBitmap, 0, 0, 18, 17, coluna * 33 + 12, linha * 33 + 12, 20, 20, 0);
 }

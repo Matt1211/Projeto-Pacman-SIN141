@@ -9,6 +9,7 @@
 
 #include "../ArquivosH/MapUtils.h"
 #include "../ArquivosH/Pacman.h"
+#include "../ArquivosH/Pilula.h"
 #include "../ArquivosH/Map.h"
 #include "../ArquivosH/Fantasma.h"
 
@@ -17,7 +18,7 @@
 
 using namespace std;
 
-const float FPS = 6.6;
+const float FPS = 6.5;
 
 int main() {
 	ALLEGRO_DISPLAY* display = NULL;
@@ -64,7 +65,7 @@ int main() {
 	Fantasma playerFantasmaAzul('A', 12, 15); //Azul
 	Fantasma playerFantasmaLaranja('L', 18, 15); //Laranja
 	Fantasma playerFantasmaRosa('R', 14, 15); //Rosa
-
+	Pilula pilulaObject;
 
 	al_start_timer(timer);
 	int pontos = 0;
@@ -129,6 +130,7 @@ int main() {
 			}
 		}
 
+
 		playerPacman.arredondamento();
 
 		playerPacman.renderizaPacman(
@@ -137,7 +139,15 @@ int main() {
 			playerPacman.getDirection()
 		);
 
-		playerPacman.checaPontuacao(mapa, playerPacman.getPosition_x(),playerPacman.getPosition_y());
+		if (mapa[playerPacman.getPosition_x() / 33][playerPacman.getPosition_y() / 33] == '1') {
+			mapa[playerPacman.getPosition_x() / 33][playerPacman.getPosition_y() / 33] = ' ';
+			pontos++;
+		};
+
+		if (mapa[playerPacman.getPosition_x() / 33][playerPacman.getPosition_y() / 33] == '2') {
+			mapa[playerPacman.getPosition_x() / 33][playerPacman.getPosition_y() / 33] = ' ';
+			pontos+=10;
+		};
 
 		playerFantasmaAmarelo.renderizaFantasma(mapa);
 		playerFantasmaAzul.renderizaFantasma(mapa);
@@ -145,8 +155,9 @@ int main() {
 		playerFantasmaRosa.renderizaFantasma(mapa);
 
 		/*destruirMapa();*/
-		al_draw_textf(fonte, al_map_rgb(255, 255, 255), 1050, 150, 0, "SCORE: %d", playerPacman.getPontuacao());
+		al_draw_textf(fonte, al_map_rgb(255, 255, 255), 1050, 150, 0, "SCORE: %d", pontos);
 
+		/*pilulaObject.destruirPilula();*/
 		al_flip_display();
 	}
 	al_stop_sample_instance(instance);
