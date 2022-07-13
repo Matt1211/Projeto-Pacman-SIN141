@@ -14,8 +14,6 @@ Pacman::Pacman() {
 	pacmanPosition_x = 33 * 14;
 	pacmanPosition_y = 33 * 11;
 	pontuacao = 0;
-
-	renderizaPacman(pacmanPosition_x, pacmanPosition_y, pacmanDirection);
 }
 
 Pacman::~Pacman() {

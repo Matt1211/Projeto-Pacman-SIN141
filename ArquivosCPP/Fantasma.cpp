@@ -55,7 +55,7 @@ Fantasma::~Fantasma() {
 
 void Fantasma::setDirection() {
 
-	this->fantasmaDirection = rand() % 3;
+	this->fantasmaDirection = rand() % 4;
 }
 
 void Fantasma::setPosition_x(int position_x, char direction) {

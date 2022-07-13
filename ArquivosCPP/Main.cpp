@@ -69,7 +69,7 @@ int main() {
 
 	al_start_timer(timer);
 	int pontos = 0, linha = 20, coluna = 30;
-	while (!done)
+	while (!done || pontos == 308)
 	{
 
 		ALLEGRO_EVENT events;
@@ -151,8 +151,40 @@ int main() {
 
 		if (mapa[playerPacman.getPosition_y() / 33][playerPacman.getPosition_x() / 33] == '2') {
 			mapa[playerPacman.getPosition_y() / 33][playerPacman.getPosition_x() / 33] = ' ';
-			pontos++;
+			pontos += 10;
 		};
+
+		if (
+			playerFantasmaAzul.getPosition_y() == playerPacman.getPosition_y()
+											&&
+			playerFantasmaAzul.getPosition_x() == playerPacman.getPosition_x())
+		{
+			done = true;
+		}
+
+		if (
+			playerFantasmaAmarelo.getPosition_y() == playerPacman.getPosition_y()
+											&&
+			playerFantasmaAmarelo.getPosition_x() == playerPacman.getPosition_x())
+		{
+			done = true;
+		}
+
+		if (
+			playerFantasmaLaranja.getPosition_y() == playerPacman.getPosition_y()
+											&&
+			playerFantasmaLaranja.getPosition_x() == playerPacman.getPosition_x())
+		{
+			done = true;
+		}
+
+		if (
+			playerFantasmaRosa.getPosition_y() == playerPacman.getPosition_y()
+											&&
+			playerFantasmaRosa.getPosition_x() == playerPacman.getPosition_x())
+		{
+			done = true;
+		}
 
 		/*destruirMapa();*/
 		al_draw_textf(fonte, al_map_rgb(255, 255, 255), 1050, 150, 0, "SCORE: %d", pontos);
