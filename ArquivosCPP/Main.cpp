@@ -133,11 +133,7 @@ int main() {
 
 		playerPacman.arredondamento();
 
-		playerPacman.renderizaPacman(
-			playerPacman.getPosition_x(),
-			playerPacman.getPosition_y(),
-			playerPacman.getDirection()
-		);
+		playerPacman.renderizaPacman();
 
 		playerFantasmaAmarelo.renderizaFantasma(mapa);
 		playerFantasmaAzul.renderizaFantasma(mapa);

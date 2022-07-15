@@ -13,7 +13,7 @@ public:
 
 	void arredondamento();
 	void setDirection(int direction);
-	void renderizaPacman(int pacmanPositionX, int pacmanPositionY, int pacmanDirection);
+	void renderizaPacman();
 };
 
 #endif // !PACMAN_H

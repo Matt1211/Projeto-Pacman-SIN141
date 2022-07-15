@@ -36,23 +36,23 @@ void Ator::setPosition_y(int position_y)
 	if (this->getDirection() != STILL) {
 
 		if (this->getDirection() == UP)
-			this->position_y += position_y;
+			this->position_y -= position_y;
 
 		if (this->getDirection() == DOWN)
-			this->position_y -= position_y;
+			this->position_y += position_y;
 	}
 }
 
 void Ator::segueDireita(char mapa[20][30])
 {
-	if (mapa[this->getPosition_y() / spriteSize][(this->getPosition_x() - spriteSize) / spriteSize] != TIJOLO)
+	if (mapa[this->getPosition_y() / spriteSize][(this->getPosition_x() + spriteSize) / spriteSize] != TIJOLO)
 		this->setPosition_x(spriteSize);
 	else
 		this->setDirection(STILL);
 }
 
 void Ator::segueEsquerda(char mapa[20][30]) {
-	if (mapa[this->getPosition_y() / spriteSize][(this->getPosition_x() + spriteSize) / spriteSize] != TIJOLO)
+	if (mapa[this->getPosition_y() / spriteSize][(this->getPosition_x() - spriteSize) / spriteSize] != TIJOLO)
 		this->setPosition_x(spriteSize);
 	else
 		this->setDirection(STILL);
