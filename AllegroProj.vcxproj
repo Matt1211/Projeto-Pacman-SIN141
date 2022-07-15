@@ -141,6 +141,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ArquivosCPP\Ator.cpp" />
     <ClCompile Include="ArquivosCPP\Fantasma.cpp" />
     <ClCompile Include="ArquivosCPP\Moeda.cpp" />
     <ClCompile Include="ArquivosCPP\Pacman.cpp" />
@@ -149,6 +150,7 @@
     <ClCompile Include="ArquivosCPP\Tijolo.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ArquivosH\Ator.h" />
     <ClInclude Include="ArquivosH\Fantasma.h" />
     <ClInclude Include="ArquivosH\Map.h" />
     <ClInclude Include="ArquivosH\MapUtils.h" />
