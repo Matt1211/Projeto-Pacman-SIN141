@@ -61,10 +61,10 @@ int main() {
 	al_attach_sample_instance_to_mixer(instance, al_get_default_mixer());
 
 	Pacman playerPacman;
-	Fantasma playerFantasmaAmarelo('M', 15, 15); //Amarelo
-	Fantasma playerFantasmaAzul('A', 12, 15); //Azul
-	Fantasma playerFantasmaLaranja('L', 18, 15); //Laranja
-	Fantasma playerFantasmaRosa('R', 14, 15); //Rosa
+	Fantasma playerFantasmaAmarelo(AMARELO, 15, 15); //Amarelo
+	Fantasma playerFantasmaAzul(AZUL, 12, 15); //Azul
+	Fantasma playerFantasmaLaranja(LARANJA, 18, 15); //Laranja
+	Fantasma playerFantasmaRosa(ROSA, 14, 15); //Rosa
 	Pilula pilulaObject;
 
 	al_start_timer(timer);
@@ -133,11 +133,7 @@ int main() {
 
 		playerPacman.arredondamento();
 
-		playerPacman.renderizaPacman(
-			playerPacman.getPosition_x(),
-			playerPacman.getPosition_y(),
-			playerPacman.getDirection()
-		);
+		playerPacman.renderizaPacman();
 
 		playerFantasmaAmarelo.renderizaFantasma(mapa);
 		playerFantasmaAzul.renderizaFantasma(mapa);
