@@ -1,41 +1,23 @@
-#pragma once
 #ifndef FANTASMA_H
 #define	FANTASMA_H
 #include <allegro5/allegro.h>
 #include "Map.h"
+#include "Ator.h"
+#include <math.h>
 
-class Fantasma
+class Fantasma : public Ator
 {
 public:
 	Fantasma();
-	Fantasma(char cor, int position_x, int position_y);
+	Fantasma(int cor, int position_x, int position_y);
 	~Fantasma();
 
+	void setDirection(int direction);
 	void renderizaFantasma(char mapa[20][30]);
 
-	void setPosition_x(int position_x, char direction);
-	int getPosition_x();
-
-	void setPosition_y(int position_y, char direction);
-	int getPosition_y();
-
-	void setDirection();
-	int getDirection();
-
-	void segueDireita(char mapa[20][30]);
-
-	void segueEsquerda(char mapa[20][30]);
-
-	void segueAcima(char mapa[20][30]);
-
-	void segueAbaixo(char mapa[20][30]);
-
 private:
-	char cor;
-	int fantasmaDirection;
-	int fantasmaPosition_x;
-	int fantasmaPosition_y;
-	ALLEGRO_BITMAP* fantasmaBitmap;
+	int cor;
+	void IA_Base(char mapa[20][30]);
 };
 
 #endif // !FANTASMA_H

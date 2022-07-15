@@ -9,6 +9,7 @@ Pacman::Pacman() {
 	this->position_y = INITIAL_Y;
 	this->bitmap = al_load_bitmap(PACMAN_IMG);
 	this->setDirection(STILL);
+
 }
 
 Pacman::~Pacman() {
