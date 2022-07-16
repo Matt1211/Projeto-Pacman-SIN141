@@ -8,8 +8,8 @@ using namespace std;
 
 enum directionEnum {
 
-	RIGHT = 0,
-	LEFT = 1,
+	RIGHT = 1,
+	LEFT = 0,
 	UP = 2,
 	DOWN = 3,
 	STILL = 4
