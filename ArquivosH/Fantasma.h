@@ -13,10 +13,12 @@ public:
 	~Fantasma();
 
 	void setDirection(int direction);
-	void renderizaFantasma(char mapa[20][30]);
+	virtual void renderizaFantasma(char mapa[20][30]);
+
+protected:
+	int cor;
 
 private:
-	int cor;
 	void IA_Base(char mapa[20][30]);
 };
 
