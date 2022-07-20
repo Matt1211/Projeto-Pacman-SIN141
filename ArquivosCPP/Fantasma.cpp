@@ -13,7 +13,7 @@ Fantasma::Fantasma() {
 	this->position_x = INITIAL_X;
 	this->position_y = INITIAL_Y;
 	this->direction = STILL;
-
+	this->cor = NULL;
 }
 
 Fantasma::Fantasma(int cor, int position_x, int position_y) {
