@@ -50,6 +50,9 @@ Fantasma::~Fantasma() {
 
 }
 
+int Fantasma::getCor() {
+	return this->cor;
+}
 
 void Fantasma::setDirection(int direction) {
 

@@ -12,13 +12,14 @@
 #include "../ArquivosH/Pilula.h"
 #include "../ArquivosH/Map.h"
 #include "../ArquivosH/Fantasma.h"
+#include "../ArquivosH/Collision.h"
 
 #define PACMAN_MUSIC "images/Pac_man.mp3"
 #define FONTE_ARIAL "images/arial.ttf"
 
 using namespace std;
 
-const float FPS = 6.5;
+const float FPS = 20;
 
 int main() {
 	ALLEGRO_DISPLAY* display = NULL;
@@ -150,37 +151,17 @@ int main() {
 			pontos += 10;
 		};
 
-		if (
-			playerFantasmaAzul.getPosition_y() == playerPacman.getPosition_y()
-											&&
-			playerFantasmaAzul.getPosition_x() == playerPacman.getPosition_x())
+		if (Colisao(playerPacman, playerFantasmaAmarelo)
+			                      ||
+			Colisao(playerPacman, playerFantasmaAzul)
+			                      ||
+			Colisao(playerPacman, playerFantasmaLaranja)
+			                      ||
+			Colisao(playerPacman, playerFantasmaRosa))
 		{
 			done = true;
 		}
 
-		if (
-			playerFantasmaAmarelo.getPosition_y() == playerPacman.getPosition_y()
-											&&
-			playerFantasmaAmarelo.getPosition_x() == playerPacman.getPosition_x())
-		{
-			done = true;
-		}
-
-		if (
-			playerFantasmaLaranja.getPosition_y() == playerPacman.getPosition_y()
-											&&
-			playerFantasmaLaranja.getPosition_x() == playerPacman.getPosition_x())
-		{
-			done = true;
-		}
-
-		if (
-			playerFantasmaRosa.getPosition_y() == playerPacman.getPosition_y()
-											&&
-			playerFantasmaRosa.getPosition_x() == playerPacman.getPosition_x())
-		{
-			done = true;
-		}
 
 		/*destruirMapa();*/
 		al_draw_textf(fonte, al_map_rgb(255, 255, 255), 1050, 150, 0, "SCORE: %d", pontos);

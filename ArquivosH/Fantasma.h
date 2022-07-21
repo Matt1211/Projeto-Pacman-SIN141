@@ -14,6 +14,7 @@ public:
 
 	void setDirection(int direction);
 	virtual void renderizaFantasma(char mapa[20][30]);
+	int getCor();
 
 protected:
 	int cor;
