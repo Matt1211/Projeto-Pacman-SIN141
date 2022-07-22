@@ -114,7 +114,6 @@ int main() {
 	al_attach_sample_instance_to_mixer(instance, al_get_default_mixer());
 	al_reserve_samples(1);
 
-	int pontos = 0, linha = 20, coluna = 30;
 	bool done = false;
 
 	Pacman playerPacman;
