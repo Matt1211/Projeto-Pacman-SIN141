@@ -1,21 +1,21 @@
 #ifndef FANTASMASMART_H
 #define FANTASMASMART_H
-#include "Fantasma.h"
-#include "Pacman.h"
+#include <allegro5/allegro.h>
+#include "Map.h"
+#include "Ator.h"
+#include <math.h>
 
-
-class FantasmaSmart : public Fantasma
+class FantasmaSmart : public Ator
 {
 public:
 	FantasmaSmart();
-	FantasmaSmart(int cor, int position_x, int position_y);
+	FantasmaSmart(int position_x, int position_y);
 	~FantasmaSmart();
 
-
-	void renderizaFantasma(char mapa[20][30]);
-
+	void setDirection(int direction);
+	virtual void renderizaFantasma(char mapa[20][30], int pac_pos_x, int pac_pos_y);
 private:
-	void IASmart(char mapa[20][30]);
+	void IA_Base(char mapa[20][30]);
 };
 
 #endif // !FANTASMASMART_H

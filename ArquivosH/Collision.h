@@ -2,6 +2,7 @@
 #define COLLISION_H
 #include "Pacman.h"
 #include "Fantasma.h"
+#include "FantasmaSmart.h"
 
 bool Colisao(Pacman& player, Fantasma& fantasma) {
 
