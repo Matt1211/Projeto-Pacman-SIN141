@@ -23,7 +23,7 @@
 
 using namespace std;
 
-const float FPS = 6.5;
+const float FPS = 10;
 const int SCREEN_W = 1280;
 const int SCREEN_H = 720;
 
