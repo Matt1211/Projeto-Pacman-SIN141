@@ -20,7 +20,7 @@
 
 using namespace std;
 
-const float FPS = 20;
+const float FPS = 10;
 
 int main() {
 	ALLEGRO_DISPLAY* display = NULL;
@@ -70,14 +70,14 @@ int main() {
 
 	al_start_timer(timer);
 	int pontos = 0, linha = 20, coluna = 30;
+
+	bool redraw = true;
+
 	while (!done)
 	{
 
 		ALLEGRO_EVENT events;
 		al_wait_for_event(event_queue, &events);
-		al_clear_to_color(al_map_rgb(0, 0, 0));
-		criarMapa();
-
 		al_play_sample_instance(instance);
 		al_play_sample(sample, 1.0, 0.0, 1.0, ALLEGRO_PLAYMODE_LOOP, NULL);
 
@@ -105,8 +105,9 @@ int main() {
 				break;
 			}
 		}
+		else if (events.type == ALLEGRO_EVENT_TIMER) {
 
-		if (events.type == ALLEGRO_EVENT_TIMER) {
+			redraw = true;
 
 			switch (playerPacman.getDirection())
 			{
@@ -132,35 +133,38 @@ int main() {
 		}
 
 
-		playerPacman.arredondamento();
+		if (redraw && al_is_event_queue_empty(event_queue)) {
 
-		playerPacman.renderizaPacman();
+			redraw = false;
 
-		playerFantasmaAmarelo.renderizaFantasma(mapa);
-		playerFantasmaAzul.renderizaFantasma(mapa);
-		playerFantasmaLaranja.renderizaFantasma(mapa);
-		playerFantasmaRosa.renderizaFantasma(mapa);
+			criarMapa();
 
-		playerScore(playerPacman, pontos);
-		
+			playerPacman.renderizaPacman();
+			playerScore(playerPacman, pontos);
 
-		if (Colisao(playerPacman, playerFantasmaAmarelo)
-			                      ||
-			Colisao(playerPacman, playerFantasmaAzul)
-			                      ||
-			Colisao(playerPacman, playerFantasmaLaranja)
-			                      ||
-			Colisao(playerPacman, playerFantasmaRosa))
-		{
-			done = true;
+
+			if (Colisao(playerPacman, playerFantasmaAmarelo)
+				||
+				Colisao(playerPacman, playerFantasmaAzul)
+				||
+				Colisao(playerPacman, playerFantasmaLaranja)
+				||
+				Colisao(playerPacman, playerFantasmaRosa))
+			{
+				done = true;
+			}
+
+			playerFantasmaAmarelo.renderizaFantasma(mapa);
+			playerFantasmaAzul.renderizaFantasma(mapa);
+			playerFantasmaLaranja.renderizaFantasma(mapa);
+			playerFantasmaRosa.renderizaFantasma(mapa);
+
+			al_draw_textf(fonte, al_map_rgb(255, 255, 255), 1050, 150, 0, "SCORE: %d", pontos);
+			al_flip_display();
+
+			al_clear_to_color(al_map_rgb(0, 0, 0));
+
 		}
-
-
-		/*destruirMapa();*/
-		al_draw_textf(fonte, al_map_rgb(255, 255, 255), 1050, 150, 0, "SCORE: %d", pontos);
-
-
-		al_flip_display();
 	}
 	al_stop_sample_instance(instance);
 

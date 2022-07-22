@@ -43,9 +43,6 @@ void criarMapa() {
 	Tijolo tijoloObject;
 	Moeda moedaObject;
 	Pilula pilulaObject;
-	Pacman playerPacman;
-	cout << playerPacman.getPosition_y() / 33 << endl;
-	cout << playerPacman.getPosition_x() / 33 << endl;
 
 	int linha, coluna;
 	for (linha = 0; linha < 20; linha++) {
