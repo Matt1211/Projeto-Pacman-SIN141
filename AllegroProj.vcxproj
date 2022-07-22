@@ -160,6 +160,7 @@
     <ClInclude Include="ArquivosH\Moeda.h" />
     <ClInclude Include="ArquivosH\Pacman.h" />
     <ClInclude Include="ArquivosH\Pilula.h" />
+    <ClInclude Include="ArquivosH\Score.h" />
     <ClInclude Include="ArquivosH\Tijolo.h" />
   </ItemGroup>
   <ItemGroup>

@@ -71,6 +71,9 @@
     <ClInclude Include="ArquivosH\Collision.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="ArquivosH\Score.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -13,6 +13,7 @@
 #include "../ArquivosH/Map.h"
 #include "../ArquivosH/Fantasma.h"
 #include "../ArquivosH/Collision.h"
+#include "../ArquivosH/Score.h"
 
 #define PACMAN_MUSIC "images/Pac_man.mp3"
 #define FONTE_ARIAL "images/arial.ttf"
@@ -66,11 +67,10 @@ int main() {
 	Fantasma playerFantasmaAzul(AZUL, 12, 15); //Azul
 	Fantasma playerFantasmaLaranja(LARANJA, 18, 15); //Laranja
 	Fantasma playerFantasmaRosa(ROSA, 14, 15); //Rosa
-	Pilula pilulaObject;
 
 	al_start_timer(timer);
 	int pontos = 0, linha = 20, coluna = 30;
-	while (!done || pontos == 308)
+	while (!done)
 	{
 
 		ALLEGRO_EVENT events;
@@ -141,15 +141,8 @@ int main() {
 		playerFantasmaLaranja.renderizaFantasma(mapa);
 		playerFantasmaRosa.renderizaFantasma(mapa);
 
-		if (mapa[playerPacman.getPosition_y() / 33][playerPacman.getPosition_x() / 33] == '1') {
-			mapa[playerPacman.getPosition_y() / 33][playerPacman.getPosition_x() / 33] = ' ';
-			pontos++;
-		};
-
-		if (mapa[playerPacman.getPosition_y() / 33][playerPacman.getPosition_x() / 33] == '2') {
-			mapa[playerPacman.getPosition_y() / 33][playerPacman.getPosition_x() / 33] = ' ';
-			pontos += 10;
-		};
+		playerScore(playerPacman, pontos);
+		
 
 		if (Colisao(playerPacman, playerFantasmaAmarelo)
 			                      ||

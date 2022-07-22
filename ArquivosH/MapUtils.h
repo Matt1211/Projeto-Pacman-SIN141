@@ -60,6 +60,7 @@ void criarMapa() {
 				pilulaObject.renderizaPilula(linha, coluna);
 			}
 		}
+
 	}
 };
 
