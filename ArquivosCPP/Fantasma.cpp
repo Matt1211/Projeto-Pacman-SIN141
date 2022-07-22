@@ -1,7 +1,6 @@
 #include "../ArquivosH/Fantasma.h"
 #define FANTASMA_AMARELO_IMG "images/fantasmaAmarelo.bmp"
 #define FANTASMA_AZUL_IMG "images/fantasmaAzul.bmp"
-#define FANTASMA_LARANJA_IMG "images/fantasmaLaranja.bmp"
 #define FANTASMA_ROSA_IMG "images/fantasmaRosa.bmp"
 #define INITIAL_X 462
 #define INITIAL_Y 495
@@ -26,10 +25,6 @@ Fantasma::Fantasma(int cor, int position_x, int position_y) {
 
 	case AZUL:
 		this->bitmap = al_load_bitmap(FANTASMA_AZUL_IMG);
-		break;
-
-	case LARANJA:
-		this->bitmap = al_load_bitmap(FANTASMA_LARANJA_IMG);
 		break;
 
 	case ROSA:
