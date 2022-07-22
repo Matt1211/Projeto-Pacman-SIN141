@@ -216,8 +216,6 @@ int main() {
 				||
 				Colisao(playerPacman, playerFantasmaAzul)
 				||
-				Colisao(playerPacman, playerFantasmaLaranja)
-				||
 				Colisao(playerPacman, playerFantasmaRosa))
 			{
 				done = true;
@@ -225,7 +223,6 @@ int main() {
 
 			playerFantasmaAmarelo.renderizaFantasma(mapa);
 			playerFantasmaAzul.renderizaFantasma(mapa);
-			playerFantasmaLaranja.renderizaFantasma(mapa);
 			playerFantasmaRosa.renderizaFantasma(mapa);
 
 			al_draw_textf(fonte, al_map_rgb(255, 255, 255), 1050, 150, 0, "SCORE: %d", pontos);
