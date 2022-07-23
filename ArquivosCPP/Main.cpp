@@ -23,7 +23,7 @@
 
 using namespace std;
 
-const float FPS = 10;
+const float FPS = 8;
 const int SCREEN_W = 1280;
 const int SCREEN_H = 720;
 
@@ -124,10 +124,9 @@ int main() {
 
 	al_start_timer(timer);
 	int pontos = 0, linha = 20, coluna = 30;
-
 	bool redraw = true;
 
-	while (!done)
+	while (!done || pontos < 308)
 	{
 		ALLEGRO_EVENT events;
 		al_wait_for_event(event_queue, &events);
@@ -210,6 +209,10 @@ int main() {
 			playerPacman.renderizaPacman();
 			playerScore(playerPacman, pontos);
 
+			playerFantasmaAmarelo.renderizaFantasma(mapa);
+			playerFantasmaAzul.renderizaFantasma(mapa);
+			playerFantasmaRosa.renderizaFantasma(mapa);
+			playerFantasmaLaranja.renderizaFantasma(mapa, playerPacman.getPosition_x(), playerPacman.getPosition_y());
 
 			if (Colisao(playerPacman, playerFantasmaAmarelo)
 				||
@@ -219,10 +222,6 @@ int main() {
 			{
 				done = true;
 			}
-
-			playerFantasmaAmarelo.renderizaFantasma(mapa);
-			playerFantasmaAzul.renderizaFantasma(mapa);
-			playerFantasmaRosa.renderizaFantasma(mapa);
 
 			al_draw_textf(fonte, al_map_rgb(255, 255, 255), 1050, 150, 0, "SCORE: %d", pontos);
 			al_flip_display();

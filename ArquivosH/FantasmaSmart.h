@@ -15,7 +15,7 @@ public:
 	void setDirection(int direction);
 	virtual void renderizaFantasma(char mapa[20][30], int pac_pos_x, int pac_pos_y);
 private:
-	void IA_Base(char mapa[20][30]);
+	void IA_Smart(char mapa[20][30], int pac_pos_x, int pac_pos_y);
 };
 
 #endif // !FANTASMASMART_H
