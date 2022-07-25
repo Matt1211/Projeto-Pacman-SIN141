@@ -29,11 +29,6 @@ FantasmaSmart::~FantasmaSmart()
 {
 }
 
-void FantasmaSmart::setDirection(int direction)
-{
-
-	this->direction = rand() % 4;
-}
 void FantasmaSmart::IA_Smart(char mapa[20][30], int pac_pos_x, int pac_pos_y)
 {
 
