@@ -23,7 +23,7 @@
 
 using namespace std;
 
-const float FPS = 8;
+const float FPS = 10;
 const int SCREEN_W = 1280;
 const int SCREEN_H = 720;
 
@@ -126,7 +126,7 @@ int main() {
 	int pontos = 0, linha = 20, coluna = 30;
 	bool redraw = true;
 
-	while (!done || pontos < 308)
+	while (!done)
 	{
 		ALLEGRO_EVENT events;
 		al_wait_for_event(event_queue, &events);
