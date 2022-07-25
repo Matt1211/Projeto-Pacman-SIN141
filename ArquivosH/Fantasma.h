@@ -1,8 +1,7 @@
 #ifndef FANTASMA_H
 #define	FANTASMA_H
 #include <allegro5/allegro.h>
-#include "Map.h"
-#include "Ator.h"
+#include "Fantasma.h"
 #include <math.h>
 
 class Fantasma : public Ator
@@ -12,7 +11,6 @@ public:
 	Fantasma(int cor, int position_x, int position_y);
 	~Fantasma();
 
-	void setDirection(int direction);
 	virtual void renderizaFantasma(char mapa[20][30]);
 	int getCor();
 
