@@ -63,29 +63,6 @@ void FantasmaSmart::IA_Smart(char mapa[20][30], int pac_pos_x, int pac_pos_y)
 			break;
 		}
 	}
-	/*if ((this->getPosition_x() > pac_pos_x) && (mapa[(this->getPosition_y() / spriteSize)][(this->getPosition_x() - spriteSize) / spriteSize] != TIJOLO))
-	{
-		this->segueEsquerda(mapa);
-	}
-
-	else if ((this->getPosition_x() < pac_pos_x) && (mapa[this->getPosition_y() / spriteSize][(this->getPosition_x() + spriteSize) / spriteSize] != TIJOLO))
-	{
-		this->segueDireita(mapa);
-	}
-
-	else if ((this->getPosition_y() > pac_pos_y) && (mapa[(this->getPosition_y() - spriteSize) / spriteSize][this->getPosition_x() / spriteSize] != TIJOLO))
-	{
-		this->segueAbaixo(mapa);
-	}
-
-	else if ((this->getPosition_y() < pac_pos_y) && (mapa[(this->getPosition_y() + spriteSize) / spriteSize][this->getPosition_x() / spriteSize] != TIJOLO))
-	{
-		this->segueAcima(mapa);
-	}*/
-
-	/*if (mapa[this->getPosition_y() / spriteSize][this->getPosition_x() / spriteSize] == TIJOLO)
-		IA_Base(mapa);*/
-
 }
 
 void FantasmaSmart::renderizaFantasma(char mapa[20][30], int pac_pos_x, int pac_pos_y) {
