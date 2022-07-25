@@ -11,7 +11,6 @@ public:
 	Pacman();
 	~Pacman();
 
-	void arredondamento();
 	void setDirection(int direction);
 	void renderizaPacman();
 };

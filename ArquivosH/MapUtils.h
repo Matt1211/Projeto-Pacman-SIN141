@@ -43,9 +43,6 @@ void criarMapa() {
 	Tijolo tijoloObject;
 	Moeda moedaObject;
 	Pilula pilulaObject;
-	Pacman playerPacman;
-	cout << playerPacman.getPosition_y() / 33 << endl;
-	cout << playerPacman.getPosition_x() / 33 << endl;
 
 	int linha, coluna;
 	for (linha = 0; linha < 20; linha++) {
@@ -54,35 +51,14 @@ void criarMapa() {
 				tijoloObject.renderizaTijolo(linha, coluna);
 			}
 			else if (mapa[linha][coluna] == '1') {
-				if (playerPacman.getPosition_x() / 33 == linha && playerPacman.getPosition_y() / 33 == coluna) {
-					mapa[linha][coluna] = '  ';
-				}else {
-					moedaObject.renderizaMoeda(linha, coluna);
-				}
+				moedaObject.renderizaMoeda(linha, coluna);
 			}
 			else if (mapa[linha][coluna] == '2') {
 				pilulaObject.renderizaPilula(linha, coluna);
-				if (playerPacman.getPosition_y() / 33 == linha && playerPacman.getPosition_x() / 33 == coluna) {
-						mapa[linha][coluna] = '  ';
-				 }
 			}
-		};
-	};
+		}
 
+	}
 };
-
-//void destruirMapa() {
-//	Tijolo tijoloObject;
-//	Moeda moedaObject;
-//	Pilula pilulaObject;
-//	Pacman playerPacman;
-//	Fantasma playerFantasma;
-//
-//	tijoloObject.~Tijolo();
-//	moedaObject.~Moeda();
-//	pilulaObject.~Pilula();
-//	playerPacman.~Pacman();
-//	playerFantasma.~Fantasma();
-//}
 
 #endif // !MAPUTILS_H

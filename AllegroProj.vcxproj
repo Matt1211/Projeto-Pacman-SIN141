@@ -143,6 +143,7 @@
   <ItemGroup>
     <ClCompile Include="ArquivosCPP\Ator.cpp" />
     <ClCompile Include="ArquivosCPP\Fantasma.cpp" />
+    <ClCompile Include="ArquivosCPP\FantasmaSmart.cpp" />
     <ClCompile Include="ArquivosCPP\Moeda.cpp" />
     <ClCompile Include="ArquivosCPP\Pacman.cpp" />
     <ClCompile Include="ArquivosCPP\Pilula.cpp" />
@@ -151,12 +152,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArquivosH\Ator.h" />
+    <ClInclude Include="ArquivosH\Collision.h" />
     <ClInclude Include="ArquivosH\Fantasma.h" />
+    <ClInclude Include="ArquivosH\FantasmaSmart.h" />
     <ClInclude Include="ArquivosH\Map.h" />
     <ClInclude Include="ArquivosH\MapUtils.h" />
     <ClInclude Include="ArquivosH\Moeda.h" />
     <ClInclude Include="ArquivosH\Pacman.h" />
     <ClInclude Include="ArquivosH\Pilula.h" />
+    <ClInclude Include="ArquivosH\Score.h" />
     <ClInclude Include="ArquivosH\Tijolo.h" />
   </ItemGroup>
   <ItemGroup>

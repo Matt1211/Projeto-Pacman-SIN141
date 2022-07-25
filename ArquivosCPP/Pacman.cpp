@@ -15,11 +15,6 @@ Pacman::Pacman() {
 Pacman::~Pacman() {
 }
 
-void Pacman::arredondamento() {
-	this->position_x = ceil(this->position_x);
-	this->position_y = ceil(this->position_y);
-}
-
 
 void Pacman::setDirection(int direction) {
 

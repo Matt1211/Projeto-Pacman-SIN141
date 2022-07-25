@@ -1,7 +1,6 @@
 #include "../ArquivosH/Fantasma.h"
 #define FANTASMA_AMARELO_IMG "images/fantasmaAmarelo.bmp"
 #define FANTASMA_AZUL_IMG "images/fantasmaAzul.bmp"
-#define FANTASMA_LARANJA_IMG "images/fantasmaLaranja.bmp"
 #define FANTASMA_ROSA_IMG "images/fantasmaRosa.bmp"
 #define INITIAL_X 462
 #define INITIAL_Y 495
@@ -13,7 +12,7 @@ Fantasma::Fantasma() {
 	this->position_x = INITIAL_X;
 	this->position_y = INITIAL_Y;
 	this->direction = STILL;
-
+	this->cor = NULL;
 }
 
 Fantasma::Fantasma(int cor, int position_x, int position_y) {
@@ -26,10 +25,6 @@ Fantasma::Fantasma(int cor, int position_x, int position_y) {
 
 	case AZUL:
 		this->bitmap = al_load_bitmap(FANTASMA_AZUL_IMG);
-		break;
-
-	case LARANJA:
-		this->bitmap = al_load_bitmap(FANTASMA_LARANJA_IMG);
 		break;
 
 	case ROSA:
@@ -50,6 +45,9 @@ Fantasma::~Fantasma() {
 
 }
 
+int Fantasma::getCor() {
+	return this->cor;
+}
 
 void Fantasma::setDirection(int direction) {
 
@@ -61,13 +59,6 @@ void Fantasma::IA_Base(char mapa[20][30])
 	if (mapa[this->getPosition_y() / spriteSize][this->getPosition_x() / spriteSize] == TIJOLO) {
 		this->setDirection(rand() % (4 * this->getPosition_x() * this->getPosition_y()));
 	}
-}
-
-void Fantasma::renderizaFantasma(char mapa[20][30]) {
-
-	al_draw_bitmap_region(this->bitmap, 0, 0, spriteSize, spriteSize, this->getPosition_x() + 8, this->getPosition_y() + 6, 0);
-
-	IA_Base(mapa);
 
 	switch (this->getDirection())
 	{
@@ -90,7 +81,12 @@ void Fantasma::renderizaFantasma(char mapa[20][30]) {
 	default:
 		break;
 	}
+}
 
+void Fantasma::renderizaFantasma(char mapa[20][30]) {
+
+	IA_Base(mapa);
+	al_draw_bitmap_region(this->bitmap, 0, 0, spriteSize, spriteSize, this->getPosition_x() + 8, this->getPosition_y() + 6, 0);
 }
 
 

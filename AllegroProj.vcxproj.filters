@@ -36,6 +36,9 @@
     <ClCompile Include="ArquivosCPP\Ator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ArquivosCPP\FantasmaSmart.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ArquivosH\Tijolo.h">
@@ -60,6 +63,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ArquivosH\Ator.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ArquivosH\FantasmaSmart.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ArquivosH\Collision.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ArquivosH\Score.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
