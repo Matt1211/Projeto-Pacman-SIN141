@@ -126,7 +126,7 @@ int main() {
 	int pontos = 0, linha = 20, coluna = 30;
 	bool redraw = true;
 
-	while (!done)
+	while (!done && pontos < 308)
 	{
 		ALLEGRO_EVENT events;
 		al_wait_for_event(event_queue, &events);
@@ -212,13 +212,16 @@ int main() {
 			playerFantasmaAmarelo.renderizaFantasma(mapa);
 			playerFantasmaAzul.renderizaFantasma(mapa);
 			playerFantasmaRosa.renderizaFantasma(mapa);
+			playerFantasmaLaranja.setDirection(playerPacman.getDirection());
 			playerFantasmaLaranja.renderizaFantasma(mapa, playerPacman.getPosition_x(), playerPacman.getPosition_y());
 
 			if (Colisao(playerPacman, playerFantasmaAmarelo)
 				||
 				Colisao(playerPacman, playerFantasmaAzul)
 				||
-				Colisao(playerPacman, playerFantasmaRosa))
+				Colisao(playerPacman, playerFantasmaRosa)
+				||
+				Colisao(playerPacman, playerFantasmaLaranja))
 			{
 				done = true;
 			}

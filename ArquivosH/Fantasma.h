@@ -17,9 +17,8 @@ public:
 
 protected:
 	int cor;
-
-private:
 	void IA_Base(char mapa[20][30]);
+	
 };
 
 #endif // !FANTASMA_H
